@@ -5,13 +5,15 @@ namespace Arden.Player
 {
     public class PlayerStateManager
     {
-       PlayerIdleState playerIdleState;
+       private PlayerIdleState playerIdleState;
+       private PlayerDashState playerDashState;
 
         PlayerState currentState;
 
         #region Properties
         public PlayerState CurrentState => currentState;
         public PlayerIdleState IdleState => playerIdleState;
+        public PlayerDashState DashState => playerDashState;
         #endregion
         
         public float horizontalInput;
@@ -21,6 +23,7 @@ namespace Arden.Player
         {
 
             playerIdleState = new PlayerIdleState(this);
+            playerDashState = new PlayerDashState(this);
 
             currentState = playerIdleState;
             

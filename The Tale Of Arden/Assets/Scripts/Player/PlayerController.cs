@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.InputSystem;
@@ -7,6 +8,7 @@ namespace Arden.Player
 {
     public class PlayerController : MonoBehaviour
     {
+        PlayerStateManager playerStateManager;
         private PlayerSoundManager playerSoundManager;
         GroundChecker groundChecker;
         Rigidbody2D playerRB;
@@ -26,7 +28,13 @@ namespace Arden.Player
         bool isGrounded;
         private bool isInGround;
         private float moveDirection;
-
+        [Header("Dash Stats")]
+        [SerializeField] bool canDash;
+        [SerializeField] float dashSpeed = 10;
+        [SerializeField] float dashTime = 0.1f;
+        [SerializeField] float dashCooldown = 1;
+        float _dashCooldownReset;
+        
         [Header("Forgive Mechanics")]
         [SerializeField] float groundedRemember = 0.35f;
         float groundedRemember_reset;
@@ -54,7 +62,15 @@ namespace Arden.Player
         public bool IsGrounded => isGrounded;
 
         public float MoveDirection => moveDirection;
-        
+
+        public Vector2 DashDirection
+        {
+            get
+            {
+                Vector2 _dashDirection = (transform.localScale.x > 0) ? new Vector2(1, 0) : new Vector2(-1, 0);
+                return _dashDirection;
+            }
+        }
         public bool InAir => groundState != GroundState.IsGrounded;
         #endregion
 
@@ -63,6 +79,7 @@ namespace Arden.Player
             playerRB = GetComponent<Rigidbody2D>();
             groundChecker = GetComponentInChildren<GroundChecker>();
             playerSoundManager = PlayerParent.PlayerSoundManager;
+            playerStateManager = PlayerParent.PlayerStateManager;
 
             groundedRemember_reset = groundedRemember;
             jump_buffer_time_reset = jumpPressedRemember;
@@ -245,11 +262,52 @@ namespace Arden.Player
         #endregion
 
         #region State Methods
-        private void ChangeStateToIdle() => PlayerParent.PlayerStateManager.ChangeState(PlayerParent.PlayerStateManager.IdleState);
+        private void ChangeStateToIdle() => playerStateManager.ChangeState(PlayerParent.PlayerStateManager.IdleState);
 
         #endregion
-       
 
+        #region Dash Methods
+
+        public void CheckCanDash() 
+        {
+            if (!canDash)
+            {
+                dashCooldown += Time.deltaTime;
+                if (dashCooldown >= _dashCooldownReset)
+                {
+                    canDash = true;
+                    dashCooldown = _dashCooldownReset;
+                }
+            }
+        }
+        public void StartDash() 
+        {
+            if (canDash) 
+            {
+                StartCoroutine(Dash());
+                dashCooldown = 0;
+                canDash = false;
+            }                     
+        }
+        IEnumerator Dash() 
+        {
+            
+            playerStateManager.ChangeState(playerStateManager.DashState);
+            
+            Dash(DashDirection, dashSpeed);
+            yield return new WaitForSeconds(dashTime);
+
+            playerStateManager.ChangeState(playerStateManager.IdleState);
+        }
+        public void Dash(Vector2 _direction,float _dashSpeed) 
+        {
+            playerRB.velocity = Vector2.zero;
+
+            Vector2 _moveDirection = _dashSpeed * _direction;
+            playerRB.velocity = _moveDirection;
+        }
+
+        #endregion
 
         
         public void MakePlayerMatter(bool _isMatter) =>  GetComponent<Collider2D>().isTrigger = !_isMatter;

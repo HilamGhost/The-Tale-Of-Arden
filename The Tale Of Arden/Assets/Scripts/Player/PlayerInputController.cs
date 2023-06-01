@@ -27,5 +27,10 @@ namespace Arden.Player
         {
             playerStateManager.CurrentState.OnJump(_context);
         }
+
+        public void OnDash(InputAction.CallbackContext _context)
+        {
+            playerStateManager.CurrentState.OnDash(_context);
+        }
     }
 }

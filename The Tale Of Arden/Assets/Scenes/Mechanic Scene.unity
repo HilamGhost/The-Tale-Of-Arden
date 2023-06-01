@@ -329,7 +329,19 @@ MonoBehaviour:
     m_ActionId: db6f3934-e8b0-4f21-9f11-640d807e6b79
     m_ActionName: Player/Attack[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1ce4a02ed4f96644ebc63e454698b43b, type: 2}
+        m_TargetAssemblyTypeName: Arden.Player.PlayerInputController, Assembly-CSharp
+        m_MethodName: OnDash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: cb0da850-adc2-48cd-8017-b97a5c8baceb
     m_ActionName: Player/Dash[/Keyboard/leftShift]
   - m_PersistentCalls:
@@ -807,9 +819,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundState: 0
   isMoving: 0
-  playerSpeed: 5
+  playerSpeed: 6
   jumpSpeed: 20
   isJumpCutted: 1
+  canDash: 0
+  dashSpeed: 20
+  dashTime: 0.2
+  dashCooldown: 1
   groundedRemember: 0.35
   jumpPressedRemember: 0.35
   cutJumpHeight: 0.3

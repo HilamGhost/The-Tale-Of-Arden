@@ -31,6 +31,7 @@ namespace Arden.Player.State
         public override void OnStateUpdate()
         {
             playerController.SetGrativyScale();
+            playerController.CheckCanDash();
         }
         public override void OnStateFixedUpdate()
         {
@@ -79,6 +80,11 @@ namespace Arden.Player.State
         public override void OnJump(InputAction.CallbackContext _context)
         {
             playerController.GetJumpInput(_context);
+        }
+
+        public override void OnDash(InputAction.CallbackContext context)
+        {
+           if(context.started) playerController.StartDash();
         }
 
         #endregion
