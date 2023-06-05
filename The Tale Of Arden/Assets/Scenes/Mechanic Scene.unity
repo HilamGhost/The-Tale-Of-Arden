@@ -209,7 +209,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.45522434, g: 0.46226418, b: 0.0021804967, a: 1}
+  m_Color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -475,7 +475,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.30146188, g: 0.28898183, b: 0.3207547, a: 0}
+  m_BackGroundColor: {r: 0.764151, g: 0.75379646, b: 0.5586953, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -861,14 +861,14 @@ MonoBehaviour:
   canDash: 1
   dashSpeed: 15
   dashTime: 0.3
-  dashCooldown: 0
+  dashCooldown: 1
   groundedRemember: 0.35
   jumpPressedRemember: 0.35
   cutJumpHeight: 0.2
   minJumpRange: 1
   playerSmoothTime: 0
   gravityScale: 8
-  gravityFallScale: 8
+  gravityFallScale: 10
   maxFallSpeed: 20
   virtualCamera: {fileID: 0}
 --- !u!114 &881687566

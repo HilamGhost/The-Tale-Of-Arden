@@ -283,6 +283,7 @@ namespace Arden.Player
 
         public void CheckCanDash() 
         {
+            
             if (!canDash)
             {
                 dashCooldown += Time.deltaTime;
@@ -295,6 +296,8 @@ namespace Arden.Player
         }
         public void StartDash() 
         {
+            
+            
             if (canDash) 
             {
                 StartCoroutine(Dash());
@@ -304,7 +307,10 @@ namespace Arden.Player
         }
         IEnumerator Dash() 
         {
-            
+            if (!isGrounded)
+            {
+                yield break;
+            }
             playerStateManager.ChangeState(playerStateManager.DashState);
             
             Dash(DashDirection, dashSpeed);
