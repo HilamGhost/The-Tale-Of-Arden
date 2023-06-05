@@ -8,6 +8,7 @@ namespace Arden.Player
 
         private bool isGrounded;
         private bool isMoving;
+        private bool isJumping;
         public PlayerAnimation(Animator _animator)
         {
             playerAnimatior = _animator;
@@ -17,6 +18,7 @@ namespace Arden.Player
         {
             playerAnimatior.SetTrigger("Jump");
             Debug.Log("Jump");
+            isJumping = true;
         }
         public void PlayDashAnimation()
         {
@@ -28,7 +30,7 @@ namespace Arden.Player
         {
             playerAnimatior.SetBool("IsMoving",isMoving);
             playerAnimatior.SetBool("IsGrounded",isGrounded);
-            
+
             Debug.Log($"{isGrounded} {isMoving}");
         }
 

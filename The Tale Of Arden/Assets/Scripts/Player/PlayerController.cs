@@ -97,8 +97,7 @@ namespace Arden.Player
             ChangeJumpState();
             SetTimers();
             
-            playerAnimation.PlayBoolAnimations();
-            playerAnimation.IsGrounded = groundState == GroundState.IsGrounded;
+           
 
             isGrounded = groundChecker.IsGrounded;
             isInGround = groundChecker.IsInGround;
@@ -106,6 +105,9 @@ namespace Arden.Player
             {
                 groundedRemember = groundedRemember_reset;
             }
+            
+            playerAnimation.PlayBoolAnimations();
+            playerAnimation.IsGrounded = isGrounded;
 
         }
 
