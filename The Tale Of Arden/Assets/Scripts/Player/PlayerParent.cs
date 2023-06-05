@@ -10,11 +10,13 @@ namespace Arden.Player
         static PlayerInputController playerInput;
         static PlayerStateManager playerStateManager;
         private static PlayerSoundManager playerSoundManager;
+        private static PlayerAnimation playerAnimation;
 
         public static PlayerController PlayerController => playerController;
         public static PlayerInputController PlayerInput => playerInput;
         public static PlayerStateManager PlayerStateManager => playerStateManager;
         public static PlayerSoundManager PlayerSoundManager => playerSoundManager;
+        public static PlayerAnimation PlayerAnimation => playerAnimation;
 
     
 

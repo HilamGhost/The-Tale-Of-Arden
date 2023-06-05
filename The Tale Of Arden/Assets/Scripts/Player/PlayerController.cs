@@ -8,10 +8,12 @@ namespace Arden.Player
 {
     public class PlayerController : MonoBehaviour
     {
+        private PlayerAnimation playerAnimation;
         PlayerStateManager playerStateManager;
         private PlayerSoundManager playerSoundManager;
         GroundChecker groundChecker;
         Rigidbody2D playerRB;
+        private Animator playerAnimator;
         public enum GroundState { IsGrounded, IsJumping, InAir, PrepareJump };
 
         [Header("Situations")]
@@ -78,6 +80,10 @@ namespace Arden.Player
         {
             playerRB = GetComponent<Rigidbody2D>();
             groundChecker = GetComponentInChildren<GroundChecker>();
+
+            playerAnimator = GetComponent<Animator>();
+            playerAnimation = new PlayerAnimation(playerAnimator);
+            
             playerSoundManager = PlayerParent.PlayerSoundManager;
             playerStateManager = PlayerParent.PlayerStateManager;
 
@@ -90,6 +96,9 @@ namespace Arden.Player
 
             ChangeJumpState();
             SetTimers();
+            
+            playerAnimation.PlayBoolAnimations();
+            playerAnimation.IsGrounded = groundState == GroundState.IsGrounded;
 
             isGrounded = groundChecker.IsGrounded;
             isInGround = groundChecker.IsInGround;
@@ -114,7 +123,9 @@ namespace Arden.Player
             playerRB.velocity = new Vector2(playerRB.velocity.x, jumpSpeed);
             groundedRemember = 0;
             jumpPressedRemember = 0;
-
+            
+            playerAnimation.PlayJumpAnimation();
+            
             groundState = GroundState.IsJumping;
         }
       
@@ -206,9 +217,7 @@ namespace Arden.Player
             float _moveValue = _input * playerSpeed; 
             Vector2 _movementVector = Vector2.right * _moveValue + Vector2.up * playerRB.velocity.y;
             playerRB.velocity = _movementVector;
-            
-            
-            
+
         }
 
         public void SetMoveDirection(float _input)
@@ -222,6 +231,8 @@ namespace Arden.Player
             
             if (moveDirection > 0) transform.localScale = oldScaleAbs;
             if (moveDirection < 0) transform.localScale = new Vector3(-oldScaleAbs.x, oldScaleAbs.y, oldScaleAbs.z);
+
+            playerAnimation.IsMoving = isMoving;
         }
         public void ResetRigidbodyVelocity()
         {
@@ -295,6 +306,7 @@ namespace Arden.Player
             playerStateManager.ChangeState(playerStateManager.DashState);
             
             Dash(DashDirection, dashSpeed);
+            playerAnimation.PlayDashAnimation();
             yield return new WaitForSeconds(dashTime);
 
             playerStateManager.ChangeState(playerStateManager.IdleState);
