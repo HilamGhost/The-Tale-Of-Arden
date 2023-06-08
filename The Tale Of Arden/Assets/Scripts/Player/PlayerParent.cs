@@ -10,13 +10,17 @@ namespace Arden.Player
         static PlayerInputController playerInput;
         static PlayerStateManager playerStateManager;
         private static PlayerSoundManager playerSoundManager;
-        private static PlayerAnimation playerAnimation;
-
+        private static PlayerAnimationManager _playerAnimationManagerManager;
+        private static PlayerAttackManager playerAttackManager;
+        
+        private Animator playerAnimator;
+        
         public static PlayerController PlayerController => playerController;
         public static PlayerInputController PlayerInput => playerInput;
         public static PlayerStateManager PlayerStateManager => playerStateManager;
         public static PlayerSoundManager PlayerSoundManager => playerSoundManager;
-        public static PlayerAnimation PlayerAnimation => playerAnimation;
+        public static PlayerAnimationManager PlayerAnimationManagerManager => _playerAnimationManagerManager;
+        public static PlayerAttackManager PlayerAttackManager => playerAttackManager;
 
     
 
@@ -54,11 +58,15 @@ namespace Arden.Player
         {
             PlayerStateManager.OnStateTriggerExit(collision);
         }
-        void MakeAssignments() 
+        void MakeAssignments()
         {
+            playerAnimator = GetComponent<Animator>();
+            
             playerController = GetComponent<PlayerController>();
             playerInput = PlayerInputController.Instance;
             playerSoundManager = GetComponent<PlayerSoundManager>();
+            playerAttackManager = GetComponent<PlayerAttackManager>();
+            _playerAnimationManagerManager = new PlayerAnimationManager(playerAnimator);
             
             playerStateManager = new PlayerStateManager();
 

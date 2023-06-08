@@ -87,6 +87,10 @@ namespace Arden.Player.State
            if(context.started) playerController.StartDash();
         }
 
+        public override void OnAttack(InputAction.CallbackContext _context)
+        {
+           if(_context.started) Debug.Log("Attack");
+        }
         #endregion
 
     }

@@ -32,5 +32,10 @@ namespace Arden.Player
         {
             playerStateManager.CurrentState.OnDash(_context);
         }
+
+        public void OnAttack(InputAction.CallbackContext _context)
+        {
+            playerStateManager.CurrentState.OnAttack(_context);
+        }
     }
 }

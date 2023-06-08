@@ -37,9 +37,11 @@ namespace Arden.Player.State
 
         public virtual void OnJump(InputAction.CallbackContext _context){}
         public virtual void OnDash(InputAction.CallbackContext context){}
+        public virtual void OnAttack(InputAction.CallbackContext context) {}
 
         #endregion
 
-       
+
+      
     }
 }

@@ -2,14 +2,14 @@ using UnityEngine;
 
 namespace Arden.Player
 {
-    public class PlayerAnimation
+    public class PlayerAnimationManager
     {
         private Animator playerAnimatior;
 
         private bool isGrounded;
         private bool isMoving;
-        private bool isJumping;
-        public PlayerAnimation(Animator _animator)
+        private bool isFloating;
+        public PlayerAnimationManager(Animator _animator)
         {
             playerAnimatior = _animator;
         }
@@ -17,23 +17,28 @@ namespace Arden.Player
         public void PlayJumpAnimation()
         {
             playerAnimatior.SetTrigger("Jump");
-            Debug.Log("Jump");
-            isJumping = true;
         }
         public void PlayDashAnimation()
         {
-            playerAnimatior.SetTrigger("Dash");   
-            Debug.Log("Dash");
+            playerAnimatior.SetTrigger("Dash");
         }
-        
+        public void PlayAttackAnimation()
+        {
+            playerAnimatior.SetTrigger("Attack");
+        }
         public void PlayBoolAnimations()
         {
             playerAnimatior.SetBool("IsMoving",isMoving);
             playerAnimatior.SetBool("IsGrounded",isGrounded);
-
-            Debug.Log($"{isGrounded} {isMoving}");
+            playerAnimatior.SetBool("IsFloating",isFloating);
         }
-
+        public bool IsFloating
+        {
+            set
+            {
+                isFloating = value;
+            }
+        }
         public bool IsMoving
         {
             set

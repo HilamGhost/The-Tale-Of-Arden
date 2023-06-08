@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 80d16278e918cc546828fd82c3fae97b
+guid: 13e978896a254b742bc68c8a800ba537
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dash sprite_0
+      name: attack_1_crop1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc4f22a60689c324dacc04078f0da3ee
-      internalID: -1573925746
+      spriteID: 13f4688daf3589d4596b54e6b0e2167d
+      internalID: -1040087043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_1
+      name: attack_1_crop1_1
       rect:
         serializedVersion: 2
         x: 720
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60b328113dbc5ef48aae29916a68ae61
-      internalID: 67580603
+      spriteID: 857a5917d2120ed46929c69b2063573a
+      internalID: 571827993
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_2
+      name: attack_1_crop1_2
       rect:
         serializedVersion: 2
         x: 1440
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 588c3b7e9ee739e47afb633849840e5b
-      internalID: 1208203127
+      spriteID: 7178fe6d4994fc64e81a79dbb5cc93ae
+      internalID: 876760002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_3
+      name: attack_1_crop1_3
       rect:
         serializedVersion: 2
         x: 2160
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0a824255148ccd42a4ea93eb64ba60f
-      internalID: -1590889526
+      spriteID: ab7ddb3202889f549a32fcfc0e517040
+      internalID: -1107584569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_4
+      name: attack_1_crop1_4
       rect:
         serializedVersion: 2
         x: 2880
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8021a552bce2da340a70cb1c4cb7fab1
-      internalID: 1090456959
+      spriteID: a710dab9b30b6da4bb845f9831fa4d1f
+      internalID: 1721773285
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_5
+      name: attack_1_crop1_5
       rect:
         serializedVersion: 2
         x: 3600
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e67b80482985e4047bad8b03c3f657e3
-      internalID: 1637954331
+      spriteID: 89d0d2fc54d5b394d8cfd53d01329cc3
+      internalID: -1173014828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_6
+      name: attack_1_crop1_6
       rect:
         serializedVersion: 2
         x: 4320
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91c6793c6b73cc6448fef2533234498c
-      internalID: -1056194540
+      spriteID: d22928f2103b23544bc64a4e0a9f75ce
+      internalID: 1582931532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_7
+      name: attack_1_crop1_7
       rect:
         serializedVersion: 2
         x: 5040
@@ -278,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79eae2fddfb10c444a58f82a28f5083b
-      internalID: -559431760
+      spriteID: 099b99566da38234493bdcf8d25534ae
+      internalID: 1601932479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_8
+      name: attack_1_crop1_8
       rect:
         serializedVersion: 2
         x: 5760
@@ -299,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 161787742b950ee4cb5f83e9b38158ee
-      internalID: 1375050264
+      spriteID: e881d1d5e20d4194594586e3d5f9856e
+      internalID: -1338250732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_9
+      name: attack_1_crop1_9
       rect:
         serializedVersion: 2
         x: 6480
@@ -320,14 +320,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee75bd7ce20f8e64ebd8feb9b35992f4
-      internalID: -154295275
+      spriteID: b9cdf7dbf6961404db1e5fc691e59261
+      internalID: -763522576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_10
+      name: attack_1_crop1_10
       rect:
         serializedVersion: 2
         x: 7200
@@ -341,14 +341,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c3eb5bd6c73e6346945b47b77b3f44c
-      internalID: 1581513463
+      spriteID: 04987b140249aec418ee72327767405a
+      internalID: 2125589018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_11
+      name: attack_1_crop1_11
       rect:
         serializedVersion: 2
         x: 7920
@@ -362,14 +362,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90a35948655cc7647b6cc0b387fe5d2e
-      internalID: -151561528
+      spriteID: a94e3f3e830b9f04aa57bcf2cbbeee01
+      internalID: -1163421932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_12
+      name: attack_1_crop1_12
       rect:
         serializedVersion: 2
         x: 8640
@@ -383,14 +383,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5497abd084f0f844db39dfc5cb4ce8aa
-      internalID: -1572161196
+      spriteID: b5c46329b3461d6408f1552017eeae8a
+      internalID: 307206965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_13
+      name: attack_1_crop1_13
       rect:
         serializedVersion: 2
         x: 9360
@@ -404,14 +404,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 211b5fa6f423b1e408b8b8ee7a96e5ac
-      internalID: 240046538
+      spriteID: 9da58bcfe140cc54a99540656aaf5fd4
+      internalID: -1593887193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_14
+      name: attack_1_crop1_14
       rect:
         serializedVersion: 2
         x: 10080
@@ -425,14 +425,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6003aa950cd978842ad9c6795146b7ef
-      internalID: -2106455407
+      spriteID: 2920cf76b9978ad4e82db4f67e4cc243
+      internalID: -691755024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_15
+      name: attack_1_crop1_15
       rect:
         serializedVersion: 2
         x: 10800
@@ -446,14 +446,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b595527d367c1b4d9bd647a54a8a80d
-      internalID: -1255115780
+      spriteID: c334e1f899d755d41b1428beb160bf2e
+      internalID: -1310972101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_16
+      name: attack_1_crop1_16
       rect:
         serializedVersion: 2
         x: 11520
@@ -467,14 +467,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d3a72c0fb929014dbbc7bf7343f5a85
-      internalID: -1252503444
+      spriteID: b15d63d94da04cb448d0186a7b86c5c6
+      internalID: -1602659528
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_17
+      name: attack_1_crop1_17
       rect:
         serializedVersion: 2
         x: 12240
@@ -488,14 +488,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a49244ad79b55b146839c623b3d3e82c
-      internalID: 2119839696
+      spriteID: a9e77b2c17306fc418912fb1d9b8df75
+      internalID: -584197869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash sprite_18
+      name: attack_1_crop1_18
       rect:
         serializedVersion: 2
         x: 12960
@@ -509,8 +509,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 645016f882f190843b91d9f9405082db
-      internalID: 412534205
+      spriteID: 699fad592c5f9ea45b04289ff986bdc1
+      internalID: -1912980390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack_1_crop1_19
+      rect:
+        serializedVersion: 2
+        x: 13680
+        y: 0
+        width: 720
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 681e854cc9e105244a1f04774d18953f
+      internalID: 1122305506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack_1_crop1_20
+      rect:
+        serializedVersion: 2
+        x: 14400
+        y: 0
+        width: 720
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eddefd712fe47924380954b4a4c51e49
+      internalID: -190203727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack_1_crop1_21
+      rect:
+        serializedVersion: 2
+        x: 15120
+        y: 0
+        width: 720
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a311150fbb7feba438009c54c5cccc24
+      internalID: -1030452126
       vertices: []
       indices: 
       edges: []
@@ -526,25 +589,28 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dash sprite_6: -1056194540
-      dash sprite_12: -1572161196
-      dash sprite_15: -1255115780
-      dash sprite_2: 1208203127
-      dash sprite_3: -1590889526
-      dash sprite_9: -154295275
-      dash sprite_11: -151561528
-      dash sprite_5: 1637954331
-      dash sprite_16: -1252503444
-      dash sprite_1: 67580603
-      dash sprite_0: -1573925746
-      dash sprite_4: 1090456959
-      dash sprite_10: 1581513463
-      dash sprite_13: 240046538
-      dash sprite_14: -2106455407
-      dash sprite_8: 1375050264
-      dash sprite_17: 2119839696
-      dash sprite_7: -559431760
-      dash sprite_18: 412534205
+      attack_1_crop1_2: 876760002
+      attack_1_crop1_7: 1601932479
+      attack_1_crop1_11: -1163421932
+      attack_1_crop1_6: 1582931532
+      attack_1_crop1_5: -1173014828
+      attack_1_crop1_4: 1721773285
+      attack_1_crop1_18: -1912980390
+      attack_1_crop1_13: -1593887193
+      attack_1_crop1_3: -1107584569
+      attack_1_crop1_15: -1310972101
+      attack_1_crop1_0: -1040087043
+      attack_1_crop1_16: -1602659528
+      attack_1_crop1_17: -584197869
+      attack_1_crop1_20: -190203727
+      attack_1_crop1_1: 571827993
+      attack_1_crop1_21: -1030452126
+      attack_1_crop1_10: 2125589018
+      attack_1_crop1_14: -691755024
+      attack_1_crop1_8: -1338250732
+      attack_1_crop1_9: -763522576
+      attack_1_crop1_12: 307206965
+      attack_1_crop1_19: 1122305506
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

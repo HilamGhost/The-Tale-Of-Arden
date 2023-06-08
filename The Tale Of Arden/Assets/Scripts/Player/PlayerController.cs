@@ -8,12 +8,12 @@ namespace Arden.Player
 {
     public class PlayerController : MonoBehaviour
     {
-        private PlayerAnimation playerAnimation;
+        private PlayerAnimationManager _playerAnimationManager;
         PlayerStateManager playerStateManager;
         private PlayerSoundManager playerSoundManager;
         GroundChecker groundChecker;
         Rigidbody2D playerRB;
-        private Animator playerAnimator;
+        
         public enum GroundState { IsGrounded, IsJumping, InAir, PrepareJump };
 
         [Header("Situations")]
@@ -81,8 +81,7 @@ namespace Arden.Player
             playerRB = GetComponent<Rigidbody2D>();
             groundChecker = GetComponentInChildren<GroundChecker>();
 
-            playerAnimator = GetComponent<Animator>();
-            playerAnimation = new PlayerAnimation(playerAnimator);
+            _playerAnimationManager = PlayerParent.PlayerAnimationManagerManager;
             
             playerSoundManager = PlayerParent.PlayerSoundManager;
             playerStateManager = PlayerParent.PlayerStateManager;
@@ -101,14 +100,16 @@ namespace Arden.Player
 
             isGrounded = groundChecker.IsGrounded;
             isInGround = groundChecker.IsInGround;
+            
             if (isGrounded)
             {
                 groundedRemember = groundedRemember_reset;
             }
             
-            playerAnimation.PlayBoolAnimations();
-            playerAnimation.IsGrounded = isGrounded;
-
+            _playerAnimationManager.PlayBoolAnimations();
+            
+            _playerAnimationManager.IsGrounded = isGrounded;
+            _playerAnimationManager.IsFloating = groundState == GroundState.InAir;
         }
 
         void FixedUpdate()
@@ -126,7 +127,7 @@ namespace Arden.Player
             groundedRemember = 0;
             jumpPressedRemember = 0;
             
-            playerAnimation.PlayJumpAnimation();
+            _playerAnimationManager.PlayJumpAnimation();
             
             groundState = GroundState.IsJumping;
         }
@@ -135,7 +136,7 @@ namespace Arden.Player
         {
             if (playerRB.velocity.y > minJumpRange)
             {
-                playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * -cutJumpHeight);
+                playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * cutJumpHeight);
             }
         }
         
@@ -153,7 +154,7 @@ namespace Arden.Player
                 isJumpCutted = false;
             }
             else
-            if (_context.canceled && groundState != GroundState.IsGrounded)
+            if (_context.canceled)
             {
                 isJumpCutted = true;
             }
@@ -187,6 +188,8 @@ namespace Arden.Player
                     break;
 
                 case GroundState.IsGrounded:
+                    
+                    
                     if (isGrounded)
                     {
                         groundedRemember = groundedRemember_reset;
@@ -194,7 +197,6 @@ namespace Arden.Player
                        
                     else
                     {
-                       
                         if (groundedRemember <= 0) groundState = GroundState.InAir;
                     }
                     break;
@@ -234,13 +236,14 @@ namespace Arden.Player
             if (moveDirection > 0) transform.localScale = oldScaleAbs;
             if (moveDirection < 0) transform.localScale = new Vector3(-oldScaleAbs.x, oldScaleAbs.y, oldScaleAbs.z);
 
-            playerAnimation.IsMoving = isMoving;
+            _playerAnimationManager.IsMoving = isMoving;
         }
         public void ResetRigidbodyVelocity()
         {
             playerRB.velocity = new Vector2(0, 0);
         }
         #endregion
+        
         //It will be more detailed and more User Friendly
         #region Gravity
 
@@ -297,24 +300,21 @@ namespace Arden.Player
         public void StartDash() 
         {
             
-            
             if (canDash) 
             {
                 StartCoroutine(Dash());
                 dashCooldown = 0;
                 canDash = false;
-            }                     
+            }       
+            
         }
         IEnumerator Dash() 
         {
-            if (!isGrounded)
-            {
-                yield break;
-            }
+            
             playerStateManager.ChangeState(playerStateManager.DashState);
             
             Dash(DashDirection, dashSpeed);
-            playerAnimation.PlayDashAnimation();
+            _playerAnimationManager.PlayDashAnimation();
             yield return new WaitForSeconds(dashTime);
 
             playerStateManager.ChangeState(playerStateManager.IdleState);
