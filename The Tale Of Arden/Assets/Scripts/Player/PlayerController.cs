@@ -241,6 +241,9 @@ namespace Arden.Player
         public void ResetRigidbodyVelocity()
         {
             playerRB.velocity = new Vector2(0, 0);
+            isMoving = false;
+            moveDirection = 0;
+            _playerAnimationManager.IsMoving = false;
         }
         #endregion
         
@@ -329,12 +332,11 @@ namespace Arden.Player
 
         #endregion
 
-        
+        public void AddKnockout(Vector2 _knockoutValue) => playerRB.AddForce(_knockoutValue, ForceMode2D.Impulse);
         public void MakePlayerMatter(bool _isMatter) =>  GetComponent<Collider2D>().isTrigger = !_isMatter;
         
         public void MakePlayerDynamic(bool _isDynamic) => playerRB.isKinematic = !_isDynamic;
 
-        public void AddForceToPlayer(Vector2 _force) => playerRB.AddForce(_force,ForceMode2D.Impulse);
         
         
         void SetTimers()

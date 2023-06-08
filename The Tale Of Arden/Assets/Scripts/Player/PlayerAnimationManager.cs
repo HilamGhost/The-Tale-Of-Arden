@@ -26,6 +26,10 @@ namespace Arden.Player
         {
             playerAnimatior.SetTrigger("Attack");
         }
+        public void PlaySecondAttackAnimation()
+        {
+            playerAnimatior.SetTrigger("Attack Second");
+        }
         public void PlayBoolAnimations()
         {
             playerAnimatior.SetBool("IsMoving",isMoving);
