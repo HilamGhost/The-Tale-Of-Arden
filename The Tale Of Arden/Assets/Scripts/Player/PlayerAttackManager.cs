@@ -50,7 +50,7 @@ namespace Arden.Player
         public void Attack()
         {
             StartCoroutine(StartAttack(hitTime,knockoutTime,recoverTime));
-            playerStateManager.ChangeState(playerStateManager.PlayerAttackState);
+            playerStateManager.ChangeState(playerStateManager.AttackState);
             _playerAnimationManager.PlayAttackAnimation();
             StartCoroutine(OpenSecondAttack());
         }

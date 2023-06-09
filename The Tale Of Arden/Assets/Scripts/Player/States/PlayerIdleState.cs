@@ -32,6 +32,7 @@ namespace Arden.Player.State
         {
             playerController.SetGrativyScale();
             playerController.CheckCanDash();
+            playerController.CheckHoldableObject();
         }
         public override void OnStateFixedUpdate()
         {
@@ -74,7 +75,10 @@ namespace Arden.Player.State
         }
         public override void OnHold(InputAction.CallbackContext _context)
         {
-
+            if (_context.started && playerController.CheckHoldObjectAvaliable())
+            {
+                playerStateManager.ChangeState(playerStateManager.HoldState);
+            }
 
         }
         public override void OnJump(InputAction.CallbackContext _context)

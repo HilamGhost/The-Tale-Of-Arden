@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using Cinemachine;
@@ -11,6 +12,9 @@ namespace Arden.Player
         private PlayerAnimationManager _playerAnimationManager;
         PlayerStateManager playerStateManager;
         private PlayerSoundManager playerSoundManager;
+        private PlayerHoldManager playerHoldManager;
+        
+        
         GroundChecker groundChecker;
         Rigidbody2D playerRB;
         
@@ -36,6 +40,10 @@ namespace Arden.Player
         [SerializeField] float dashTime = 0.1f;
         [SerializeField] float dashCooldown = 1;
         float _dashCooldownReset;
+
+        [Header("Gravity Values")]
+        [SerializeField] private HoldProperties holdProperties;
+        private HoldableObject holdableObject;
         
         [Header("Forgive Mechanics")]
         [SerializeField] float groundedRemember = 0.35f;
@@ -85,6 +93,8 @@ namespace Arden.Player
             
             playerSoundManager = PlayerParent.PlayerSoundManager;
             playerStateManager = PlayerParent.PlayerStateManager;
+
+            playerHoldManager = new PlayerHoldManager(this,holdProperties);
 
             groundedRemember_reset = groundedRemember;
             jump_buffer_time_reset = jumpPressedRemember;
@@ -332,13 +342,62 @@ namespace Arden.Player
 
         #endregion
 
+        #region Hold Methods
+
+        public void CheckHoldableObject()
+        {
+            AddHoldableObject(playerHoldManager.FindHoldableObject(transform.position+holdProperties.holdOffset, Vector3.right*transform.localScale.x));
+        }
+
+        public void ToggleHoldMode(bool _holdMode)
+        {
+            if (_holdMode)
+            {
+                playerHoldManager.ConnectHoldObject(holdableObject);
+                return;
+            }
+            
+            playerHoldManager.RemoveHoldObject();
+        }
+        public void AddHoldableObject(HoldableObject _holdableObject) => holdableObject = _holdableObject;
+
+        public void HoldObject(float _input)
+        {
+            SetHoldDirection(_input);
+            playerHoldManager.HoldObject(_input);
+        }
+
+        public void SetHoldDirection(float _input)
+        {
+            _playerAnimationManager.IsPushing = _input*transform.localScale.x > 0;
+            _playerAnimationManager.IsPulling = _input*transform.localScale.x < 0;
+            
+        }
+
+        public void ResetHoldAnimations()
+        {
+            _playerAnimationManager.IsPushing = false;
+            _playerAnimationManager.IsPulling = false;
+            
+            _playerAnimationManager.PlayTrigger("Cancel Hold");
+        }
+        public bool CheckHoldObjectAvaliable() => holdableObject;
+
+        #endregion
+
         public void AddKnockout(Vector2 _knockoutValue) => playerRB.AddForce(_knockoutValue, ForceMode2D.Impulse);
         public void MakePlayerMatter(bool _isMatter) =>  GetComponent<Collider2D>().isTrigger = !_isMatter;
         
         public void MakePlayerDynamic(bool _isDynamic) => playerRB.isKinematic = !_isDynamic;
 
-        
-        
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawLine(transform.position+holdProperties.holdOffset,transform.position+holdProperties.holdOffset+Vector3.right*holdProperties.holdDedectionRange*transform.localScale.x);
+            
+        }
+
         void SetTimers()
         {
             if (jumpPressedRemember > 0) jumpPressedRemember -= Time.deltaTime;

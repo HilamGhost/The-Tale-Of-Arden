@@ -27,22 +27,22 @@ namespace Arden.Player.State
         public override void OnStateStart()
         {
             playerController.ResetRigidbodyVelocity();
+            playerController.ToggleHoldMode(true);
         }
         public override void OnStateUpdate()
         {
+            playerController.ResetRigidbodyVelocity();
             playerController.SetGrativyScale();
-            playerController.CheckCanDash();
         }
         public override void OnStateFixedUpdate()
         {
-            
-            playerController.MovePlayer(playerStateManager.horizontalInput);
-           
+            playerController.HoldObject(playerStateManager.horizontalInput);
         }
         public override void OnStateExit()
         {
             playerController.ResetRigidbodyVelocity();
-           
+            playerController.ToggleHoldMode(false);
+            playerController.ResetHoldAnimations();
         }
 
         public override void OnStateCollideEnter(Collision2D collision)
@@ -74,12 +74,10 @@ namespace Arden.Player.State
         }
         public override void OnHold(InputAction.CallbackContext _context)
         {
-
-
-        }
-        public override void OnJump(InputAction.CallbackContext _context)
-        {
-            playerController.GetJumpInput(_context);
+            if (_context.canceled)
+            {
+                playerStateManager.ChangeState(playerStateManager.IdleState);
+            }
         }
 
         #endregion

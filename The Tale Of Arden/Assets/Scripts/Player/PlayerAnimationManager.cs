@@ -9,6 +9,9 @@ namespace Arden.Player
         private bool isGrounded;
         private bool isMoving;
         private bool isFloating;
+
+        private bool isPushing;
+        private bool isPulling;
         public PlayerAnimationManager(Animator _animator)
         {
             playerAnimatior = _animator;
@@ -30,11 +33,21 @@ namespace Arden.Player
         {
             playerAnimatior.SetTrigger("Attack Second");
         }
+
+        public void PlayTrigger(string _trigger)
+        {
+            playerAnimatior.SetTrigger(_trigger);
+        }
         public void PlayBoolAnimations()
         {
             playerAnimatior.SetBool("IsMoving",isMoving);
             playerAnimatior.SetBool("IsGrounded",isGrounded);
             playerAnimatior.SetBool("IsFloating",isFloating);
+            
+            playerAnimatior.SetBool("IsPushing",isPushing);
+            playerAnimatior.SetBool("IsPulling",isPulling);
+            
+       
         }
         public bool IsFloating
         {
@@ -55,6 +68,20 @@ namespace Arden.Player
             set
             {
                 isGrounded = value;
+            }
+        }
+        public bool IsPushing
+        {
+            set
+            {
+                isPushing = value;
+            }
+        }
+        public bool IsPulling
+        {
+            set
+            {
+                isPulling = value;
             }
         }
     }
