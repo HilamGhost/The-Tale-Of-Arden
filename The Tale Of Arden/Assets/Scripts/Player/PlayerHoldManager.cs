@@ -15,6 +15,7 @@ namespace Arden.Player
         HoldableObject holdableObject;
         private Rigidbody2D holdableRB;
         private Rigidbody2D playerRB;
+        private Vector2 holdPosition;
         public PlayerHoldManager(PlayerController _playerController, HoldProperties _holdProperties)
         {
             playerController = _playerController;
@@ -42,23 +43,29 @@ namespace Arden.Player
 
         public void ConnectHoldObject(HoldableObject _holdableObject)
         {
-            player.transform.parent = _holdableObject.transform;
+            player.parent = _holdableObject.transform;
             holdableObject = _holdableObject;
             holdableRB = holdableObject.GetComponent<Rigidbody2D>();
+            holdPosition = player.localPosition;
+
         }
 
         public void HoldObject(float _input)
         {
             float _moveValue = _input * holdPropterty.holdSpeed; 
             Vector2 _movementVector = Vector2.right * _moveValue + Vector2.up * holdableRB.velocity.y;
+            
             holdableRB.velocity = _movementVector;
             playerRB.velocity = _movementVector;
+            
+            player.localPosition = holdPosition;
         }
         public void RemoveHoldObject()
         {
             player.transform.parent = null;
             holdableObject = null;
             holdableRB = null;
+            holdPosition = Vector2.zero;
         }
     }
         
