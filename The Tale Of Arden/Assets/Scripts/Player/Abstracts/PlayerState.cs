@@ -32,7 +32,7 @@ namespace Arden.Player.State
         public virtual void OnMove(InputAction.CallbackContext _context){}
 
 
-        public virtual void OnLook(InputAction.CallbackContext _context){}
+        public virtual void OnHold(InputAction.CallbackContext _context){}
    
 
         public virtual void OnJump(InputAction.CallbackContext _context){}

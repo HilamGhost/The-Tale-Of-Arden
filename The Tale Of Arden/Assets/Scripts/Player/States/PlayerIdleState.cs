@@ -72,7 +72,7 @@ namespace Arden.Player.State
         {
             playerStateManager.horizontalInput = _context.ReadValue<float>();
         }
-        public override void OnLook(InputAction.CallbackContext _context)
+        public override void OnHold(InputAction.CallbackContext _context)
         {
 
 
