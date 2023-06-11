@@ -1362,7 +1362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836634956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalPosition: {x: -1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1699,7 +1699,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.12700951}
+  m_Offset: {x: 0.11140108, y: -0.1197443}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1710,7 +1710,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.9043071}
+  m_Size: {x: 0.8159456, y: 1.9188375}
   m_EdgeRadius: 0
 --- !u!212 &1058919011
 SpriteRenderer:
@@ -1799,24 +1799,24 @@ MonoBehaviour:
   patrols:
   - {fileID: 1010721869}
   - {fileID: 702744854}
-  attackRange: 3
+  attackRange: 2
   attackProperties:
     attackWaitTime: 0.4
-    attackParryStartTime: 0
-    attackParryEndTime: 0.35
-    attackRecoverTime: 4
-    attackPoint: {fileID: 0}
+    attackParryStartTime: 0.05
+    attackParryEndTime: 0.39
+    attackRecoverTime: 2
+    attackPoint: {fileID: 836634957}
     playerLayer:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 256
     parryVFX: {fileID: 5256505994762399346}
   statProperties:
-    health: 40
-    hitStunCooldown: 3
+    health: 10
+    hitStunCooldown: 1
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  playerDedectionRange: 6
+  playerDedectionRange: 10
   enemyAlert: {fileID: 227477429}
 --- !u!95 &1058919014
 Animator:

@@ -120,7 +120,7 @@ namespace Arden.Enemy
         {
             StartCoroutine(enemyAttackManager.StartParry());
             StartCoroutine(enemyAttackManager.StartAttack());
-            enemyAnimationManager.PlayAttackAnimation();
+            
            
         }
         
@@ -154,6 +154,9 @@ namespace Arden.Enemy
         private void OnDrawGizmos()
         {
             Gizmos.DrawWireSphere(transform.position,playerDedectionRange);
+            
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(attackProperties.attackPoint.position,attackRange);
         }
 
         #endregion

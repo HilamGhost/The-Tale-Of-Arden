@@ -46,5 +46,9 @@ namespace Arden.Enemy
         {
             animator.SetTrigger("CancelAttack");
         }
+        public void PlayDeathAnimation()
+        {
+            animator.SetTrigger("Death");
+        }
     }
 }

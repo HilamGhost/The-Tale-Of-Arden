@@ -128,7 +128,6 @@ namespace Arden.Enemy
             if (distanceX <= _attackRange && distanceY <= 1f)
             {
                 EnemyDirection = 0;
-                
                 enemyController.ChangeState(enemyController.enemyAttackState);
             }
         }
