@@ -1338,6 +1338,37 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
+--- !u!1 &836634956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 836634957}
+  m_Layer: 9
+  m_Name: Attack Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &836634957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836634956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1058919012}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &881687561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,7 +1703,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.7906976, y: 3.3488371}
+    oldSize: {x: 3, y: 3.6}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1701,7 +1732,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 1e638bc3a7bd94542b5d4c272c3563b2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1748,6 +1779,7 @@ Transform:
   - {fileID: 111893877}
   - {fileID: 227477431}
   - {fileID: 95786888}
+  - {fileID: 836634957}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1767,13 +1799,20 @@ MonoBehaviour:
   patrols:
   - {fileID: 1010721869}
   - {fileID: 702744854}
-  attackRange: 2
+  attackRange: 3
   attackProperties:
     attackWaitTime: 0.4
-    attackParryStartTime: 0.05
-    attackParryEndTime: 0.3
-    attackRecoverTime: 5
+    attackParryStartTime: 0
+    attackParryEndTime: 0.35
+    attackRecoverTime: 4
+    attackPoint: {fileID: 0}
+    playerLayer:
+      serializedVersion: 2
+      m_Bits: 0
     parryVFX: {fileID: 5256505994762399346}
+  statProperties:
+    health: 40
+    hitStunCooldown: 3
   playerLayer:
     serializedVersion: 2
     m_Bits: 256

@@ -12,18 +12,21 @@ namespace Arden.Enemy
         internal EnemyIdleState enemyIdleState;
         internal EnemyChaseState enemyChaseState;
         internal EnemyAttackState enemyAttackState;
+        internal EnemyHitState enemyHitState;
 
         [Header("OtherScripts")] 
         private EnemyMover enemyMover;
         private EnemyDedector enemyDedector;
         private EnemyAttackManager enemyAttackManager;
         private EnemyAnimationManager enemyAnimationManager;
+        private EnemyStatManager enemyStatManager;
         
         [Header("Properties")] 
         [SerializeField] private float moveSpeed;
         [SerializeField] private Transform[] patrols;
         [SerializeField] internal float attackRange;
         [SerializeField] private AttackProperties attackProperties;
+        [SerializeField] private EnemyStatProperties statProperties;
         
 
         [Header("Dedection")] 
@@ -38,9 +41,11 @@ namespace Arden.Enemy
         public EnemyDedector EnemyDedector => enemyDedector;
         public EnemyAttackManager EnemyAttackManager => enemyAttackManager;
         public EnemyAnimationManager EnemyAnimationManager => enemyAnimationManager;
+        public EnemyStatManager EnemyStatManager => enemyStatManager;
         public float VelocityDirection =>enemyMover.EnemyDirection;
         public float EnemyDirection => transform.localScale.x;
         #endregion
+        
         void Start()
         {
             MakeStateAssignment();
@@ -72,11 +77,14 @@ namespace Arden.Enemy
 
             }
         }
+
+        public bool IsStateEqual(IEnemyState wantedState) => currentState == wantedState;
         void MakeStateAssignment()
         {
             enemyIdleState = new EnemyIdleState(this);
             enemyChaseState = new EnemyChaseState(this);
             enemyAttackState = new EnemyAttackState(this);
+            enemyHitState = new EnemyHitState(this);
             currentState = enemyIdleState;
             
             currentState.OnEnemyStateStart();
@@ -88,6 +96,7 @@ namespace Arden.Enemy
             enemyDedector = new EnemyDedector(this, playerDedectionRange, playerLayer);
             enemyAttackManager = new EnemyAttackManager(this, attackProperties,attackRange);
             enemyAnimationManager = new EnemyAnimationManager(this);
+            enemyStatManager = new EnemyStatManager(this, statProperties);
 
         }
 
@@ -113,6 +122,16 @@ namespace Arden.Enemy
             StartCoroutine(enemyAttackManager.StartAttack());
             enemyAnimationManager.PlayAttackAnimation();
            
+        }
+        
+
+        #endregion
+
+        #region Damage Methods
+
+        public void TakeDamage()
+        {
+            enemyStatManager.TakeDamage();
         }
         
 

@@ -13,6 +13,10 @@ namespace Arden.Enemy
          float parryStartTime;
          private float parryEndTime;
          float recoverTime;
+
+
+         private Transform attackPoint;
+         private LayerMask attackLayer;
          
          private ParticleSystem parryVFX;
          
@@ -27,6 +31,9 @@ namespace Arden.Enemy
             attackWaitTime = _attackProperties.attackWaitTime;
             parryStartTime = _attackProperties.attackParryStartTime;
             parryEndTime = _attackProperties.attackParryEndTime;
+
+            attackPoint = _attackProperties.attackPoint;
+            attackLayer = _attackProperties.playerLayer;
             
             recoverTime = _attackProperties.attackRecoverTime;
             parryVFX = _attackProperties.parryVFX;
@@ -39,9 +46,9 @@ namespace Arden.Enemy
             yield return new WaitForSeconds(attackWaitTime);
             Debug.Log("Attack Starts");
             
-            if (enemyController.EnemyDedector.CanAttackToPlayer(attackRange)&& !isParried)
+            if (!isParried)
             {
-                enemyController.EnemyDedector.PlayerTransform.GetComponent<Player.PlayerStatManager>().TakeDamage();
+               
             }
 
             yield return new WaitForSeconds(recoverTime);
@@ -51,6 +58,11 @@ namespace Arden.Enemy
             enemyController.ChangeState(enemyController.enemyIdleState);
         }
 
+        void DedectAttackablePlayer()
+        {
+            
+            enemyController.EnemyDedector.PlayerTransform.GetComponent<Player.PlayerStatManager>().TakeDamage();
+        }
         public IEnumerator StartParry()
         {
             isParryable = false;
@@ -87,6 +99,9 @@ namespace Arden.Enemy
         public float attackParryEndTime;
         public float attackRecoverTime;
 
+        public Transform attackPoint;
+        public LayerMask playerLayer;
+        
         public ParticleSystem parryVFX;
     }
 }

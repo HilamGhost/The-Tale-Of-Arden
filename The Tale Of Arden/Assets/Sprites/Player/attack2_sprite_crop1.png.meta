@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 42436d6bcf9ddd24b8b3c06bc6efc0e4
+guid: e31c917bf3d675740901e6b2f877e602
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 215
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy_walk_crop1_0
+      name: attack2_sprite_crop1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 600
-        height: 720
+        width: 720
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc86ea4513d276e4285977574cce5766
-      internalID: 744620
+      spriteID: 41c9a7a7abc2ae94aa9cf7eb1134498b
+      internalID: -1234626163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_crop1_1
+      name: attack2_sprite_crop1_1
       rect:
         serializedVersion: 2
-        x: 600
+        x: 720
         y: 0
-        width: 600
-        height: 720
+        width: 720
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76a88fe37e5130541b8ceefe4b628422
-      internalID: 763066445
+      spriteID: 7e026f1b35fea77418ec3ca33c432a1f
+      internalID: 1496660854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_crop1_2
+      name: attack2_sprite_crop1_2
       rect:
         serializedVersion: 2
-        x: 1200
+        x: 1440
         y: 0
-        width: 600
-        height: 720
+        width: 720
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a61b5c7a4c3e9f429c576a04d3f55c0
-      internalID: 1937865424
+      spriteID: 51005929a8db4ea4e8a5bb353ae78433
+      internalID: -811832514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_crop1_3
+      name: attack2_sprite_crop1_3
       rect:
         serializedVersion: 2
-        x: 1800
+        x: 2160
         y: 0
-        width: 600
-        height: 720
+        width: 720
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8af7d80981965514d9d62d058a600d2c
-      internalID: -627956927
+      spriteID: 7dad219dcda55294fb8590606b6f0656
+      internalID: -1184722606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_crop1_4
+      name: attack2_sprite_crop1_4
       rect:
         serializedVersion: 2
-        x: 2400
+        x: 2880
         y: 0
-        width: 600
-        height: 720
+        width: 720
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,41 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2744c8ef16667f74ba5d107466394302
-      internalID: 550017490
+      spriteID: 47b7d3b2c43ed1046be29bb5d28003ae
+      internalID: 1783655179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_crop1_5
-      rect:
-        serializedVersion: 2
-        x: 3000
-        y: 0
-        width: 600
-        height: 720
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64fbd542ce7d50f43854ba6a2e21f415
-      internalID: 2045771591
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_walk_crop1_6
+      name: attack2_sprite_crop1_5
       rect:
         serializedVersion: 2
         x: 3600
         y: 0
-        width: 600
-        height: 720
+        width: 720
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11eefab156cbb8449bc13cd2f336c842
-      internalID: -1379774638
+      spriteID: 6f7e0dd0a95b3874ea3320e316fa4bc5
+      internalID: 1860866451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_crop1_7
+      name: attack2_sprite_crop1_6
       rect:
         serializedVersion: 2
-        x: 4200
+        x: 4320
         y: 0
-        width: 600
-        height: 720
+        width: 720
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,20 +257,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72fb0dc9f49a35d448eb1b9cb13ca81a
-      internalID: 1431851707
+      spriteID: 22b7deccacb3d7b4ca8ff5ad7725659a
+      internalID: -1652120037
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_crop1_8
+      name: attack2_sprite_crop1_7
       rect:
         serializedVersion: 2
-        x: 4800
+        x: 5040
         y: 0
-        width: 600
-        height: 720
+        width: 720
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,20 +278,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af3e9921b0ed25b4dac03be0d453da90
-      internalID: 2084712677
+      spriteID: 7c50fc131348d6446afa65d55b5c1b29
+      internalID: -270159743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_crop1_9
+      name: attack2_sprite_crop1_8
       rect:
         serializedVersion: 2
-        x: 5400
+        x: 5760
         y: 0
-        width: 600
-        height: 720
+        width: 720
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,20 +299,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54b3440bb1b8fb54f97302ba2b6f49ce
-      internalID: -255950501
+      spriteID: b8921a48075da1f4084c4fdc24b0e43f
+      internalID: 1453692821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_crop1_10
+      name: attack2_sprite_crop1_9
       rect:
         serializedVersion: 2
-        x: 6000
+        x: 6480
         y: 0
-        width: 600
-        height: 720
+        width: 720
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,41 +320,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e89a2b49b0b54dc4f9b81fc3fa4c1624
-      internalID: 1818320097
+      spriteID: aa3f11e5eec066c4781735419d6ffd47
+      internalID: 1418974662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_crop1_11
-      rect:
-        serializedVersion: 2
-        x: 6600
-        y: 0
-        width: 600
-        height: 720
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4efebca1a4c127444b6b2cccfc2715c1
-      internalID: -1418193019
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_walk_crop1_12
+      name: attack2_sprite_crop1_10
       rect:
         serializedVersion: 2
         x: 7200
         y: 0
-        width: 600
-        height: 720
+        width: 720
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,20 +341,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cd2ae4631957934f943da3492d801ad
-      internalID: 784281506
+      spriteID: 195a4de78f937f74ea3d70d96341e8b7
+      internalID: 1541033781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_crop1_13
+      name: attack2_sprite_crop1_11
       rect:
         serializedVersion: 2
-        x: 7800
+        x: 7920
         y: 0
-        width: 600
-        height: 720
+        width: 720
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,20 +362,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da5ef154064cc7d43bd030caed21d241
-      internalID: -1065259728
+      spriteID: 5b335185f5ed0a643a40ef5c0fcd85e4
+      internalID: -1142102463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_crop1_14
+      name: attack2_sprite_crop1_12
       rect:
         serializedVersion: 2
-        x: 8400
+        x: 8640
         y: 0
-        width: 600
-        height: 720
+        width: 720
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,20 +383,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05c081a0941b53b44aedc37074369f65
-      internalID: 1099736554
+      spriteID: 23875b1dd144a75449128d2e06e76fa2
+      internalID: 1115658323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_crop1_15
+      name: attack2_sprite_crop1_13
       rect:
         serializedVersion: 2
-        x: 9000
+        x: 9360
         y: 0
-        width: 600
-        height: 720
+        width: 720
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -446,20 +404,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73a856e1f53f5bb48aa82164cbcbf956
-      internalID: 878351104
+      spriteID: a80b7c2ee79179a47bd194c3f030420c
+      internalID: 1829353520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_crop1_16
+      name: attack2_sprite_crop1_14
       rect:
         serializedVersion: 2
-        x: 9600
+        x: 10080
         y: 0
-        width: 600
-        height: 720
+        width: 720
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,8 +425,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48da7701c1974b84b892325e85b4ae21
-      internalID: 189485823
+      spriteID: c8a36191f88eabd49b6e9cba20315c2e
+      internalID: -2030974988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack2_sprite_crop1_15
+      rect:
+        serializedVersion: 2
+        x: 10800
+        y: 0
+        width: 720
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b96bafca142ead4097ff0384ed505a0
+      internalID: -219235164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack2_sprite_crop1_16
+      rect:
+        serializedVersion: 2
+        x: 11520
+        y: 0
+        width: 720
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc34137eb8ce2345a831529060034aa
+      internalID: 520612332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack2_sprite_crop1_17
+      rect:
+        serializedVersion: 2
+        x: 12240
+        y: 0
+        width: 720
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 897f4b2d452c5f146aeef02fb41c4231
+      internalID: -56999975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack2_sprite_crop1_18
+      rect:
+        serializedVersion: 2
+        x: 12960
+        y: 0
+        width: 720
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235c856b9f21e884fa34eabcce8043d2
+      internalID: -1100025484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack2_sprite_crop1_19
+      rect:
+        serializedVersion: 2
+        x: 13680
+        y: 0
+        width: 720
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc18b9f1d5a2874abc47d7c37f4298a
+      internalID: 1902276817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack2_sprite_crop1_20
+      rect:
+        serializedVersion: 2
+        x: 14400
+        y: 0
+        width: 720
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17580d82baddd864282e60ebd32dcd23
+      internalID: 132329553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack2_sprite_crop1_21
+      rect:
+        serializedVersion: 2
+        x: 15120
+        y: 0
+        width: 720
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322edd38b4f76f44f845103fb3fe2700
+      internalID: -1623915188
       vertices: []
       indices: 
       edges: []
@@ -484,23 +589,28 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      enemy_walk_crop1_2: 1937865424
-      enemy_walk_crop1_8: 2084712677
-      enemy_walk_crop1_1: 763066445
-      enemy_walk_crop1_14: 1099736554
-      enemy_walk_crop1_16: 189485823
-      enemy_walk_crop1_4: 550017490
-      enemy_walk_crop1_12: 784281506
-      enemy_walk_crop1_5: 2045771591
-      enemy_walk_crop1_13: -1065259728
-      enemy_walk_crop1_6: -1379774638
-      enemy_walk_crop1_10: 1818320097
-      enemy_walk_crop1_9: -255950501
-      enemy_walk_crop1_3: -627956927
-      enemy_walk_crop1_11: -1418193019
-      enemy_walk_crop1_15: 878351104
-      enemy_walk_crop1_0: 744620
-      enemy_walk_crop1_7: 1431851707
+      attack2_sprite_crop1_4: 1783655179
+      attack2_sprite_crop1_13: 1829353520
+      attack2_sprite_crop1_16: 520612332
+      attack2_sprite_crop1_19: 1902276817
+      attack2_sprite_crop1_8: 1453692821
+      attack2_sprite_crop1_17: -56999975
+      attack2_sprite_crop1_10: 1541033781
+      attack2_sprite_crop1_12: 1115658323
+      attack2_sprite_crop1_20: 132329553
+      attack2_sprite_crop1_2: -811832514
+      attack2_sprite_crop1_3: -1184722606
+      attack2_sprite_crop1_0: -1234626163
+      attack2_sprite_crop1_18: -1100025484
+      attack2_sprite_crop1_15: -219235164
+      attack2_sprite_crop1_9: 1418974662
+      attack2_sprite_crop1_14: -2030974988
+      attack2_sprite_crop1_21: -1623915188
+      attack2_sprite_crop1_11: -1142102463
+      attack2_sprite_crop1_7: -270159743
+      attack2_sprite_crop1_5: 1860866451
+      attack2_sprite_crop1_6: -1652120037
+      attack2_sprite_crop1_1: 1496660854
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

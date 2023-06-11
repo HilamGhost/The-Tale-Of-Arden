@@ -42,5 +42,9 @@ namespace Arden.Enemy
         {
             animator.SetTrigger("Attack");
         }
+        public void CancelAttackAnimation()
+        {
+            animator.SetTrigger("CancelAttack");
+        }
     }
 }
