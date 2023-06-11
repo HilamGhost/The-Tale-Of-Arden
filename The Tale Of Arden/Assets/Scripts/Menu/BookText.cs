@@ -17,7 +17,7 @@ namespace Arden
         [SerializeField] private TextMeshPro Booktitle;
         float alpha;
         [SerializeField] private Animator Animator;
-
+        
 
 
         void Start()
