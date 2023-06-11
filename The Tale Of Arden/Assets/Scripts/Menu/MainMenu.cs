@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Arden
-{
+{     
     public class MainMenu : MonoBehaviour
     {
-        
+        public LevelLoader levelloader;
         public void PlayGame()
         {
-
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            levelloader.LoadNextLevel();
+            
         }
 
         public void QuitGame()
@@ -19,6 +19,9 @@ namespace Arden
             Debug.Log("QUIT!");
             Application.Quit();
         }
-
+        private void Start()
+        {
+      
+        }
     }
-}
+}  

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 namespace Arden
@@ -15,6 +16,8 @@ namespace Arden
         [SerializeField] private TextMeshPro Booklines;
         [SerializeField] private TextMeshPro Booktitle;
         float alpha;
+        [SerializeField] private Animator Animator;
+
 
 
         void Start()
@@ -64,7 +67,8 @@ namespace Arden
                 TitleText.color = new Color(1, 1, 1, alpha);
             }
             StartCoroutine(ahmetkaya());
-            
+           
+
 
 
         }
@@ -77,7 +81,12 @@ namespace Arden
                 
 
             }
+            yield return new WaitForSeconds(1f);
+            Animator.SetTrigger("CamMove");
+            yield return new WaitForSeconds(3f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+
         void Update()
         {
         
