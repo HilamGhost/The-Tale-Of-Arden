@@ -18,7 +18,8 @@ namespace Arden.Enemy.State
 
         public void OnEnemyStateUpdate()
         {
-           
+            enemyController.EnemyMover.EnemyDirection = 0;
+            enemyController.EnemyAnimationManager.SetEnemyMoveAnimation();
         }
 
         public void OnEnemyStateFixed()

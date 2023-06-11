@@ -19,7 +19,8 @@ namespace Arden.Enemy
         private PatrolState currentPatrolState;
 
         private float targetPointX;
-       
+        public float EnemyDirection;
+        
         #region Properties
         
         PatrolState ReverseState
@@ -51,17 +52,22 @@ namespace Arden.Enemy
             enemyController.DestroyPatrolMethods();
         }
 
+        
+       
         #region Patrol Methods
 
         public void DoPatrol()
         {
-
             CheckEnemyIsInCorner();
             
             if (!isWaiting)
             {
                 Vector2 _target = new Vector2(targetPointX,  enemyTransform.position.y);
+
                 enemyTransform.position = Vector3.MoveTowards(enemyTransform.position,_target,moveSpeed*Time.deltaTime);
+                
+                if (_target.x - enemyTransform.position.x > 0) EnemyDirection = 1;
+                if (_target.x - enemyTransform.position.x < 0) EnemyDirection = -1;
             }
         }
 
@@ -75,6 +81,8 @@ namespace Arden.Enemy
         
         IEnumerator WaitInSide(PatrolState _side)
         {
+            EnemyDirection = 0;
+            
             isWaiting = true;
             yield return new WaitForSeconds(1);
             if(isWaiting) SetTarget(_side);
@@ -105,7 +113,11 @@ namespace Arden.Enemy
             Vector2 _target = new Vector2(_player.transform.position.x,  enemyTransform.position.y);
             enemyTransform.position = Vector3.MoveTowards(enemyTransform.position,_target,moveSpeed*Time.deltaTime);
             
+            if (_target.x - enemyTransform.position.x > 0) EnemyDirection = 1;
+            if (_target.x - enemyTransform.position.x < 0) EnemyDirection = -1;
+            
         }
+        
         void CheckEnemyIsOnPlayer(Transform _player,float _attackRange)
         {
             float distanceX = Mathf.Abs(enemyTransform.position.x - _player.position.x);
@@ -115,6 +127,8 @@ namespace Arden.Enemy
             
             if (distanceX <= _attackRange && distanceY <= 1f)
             {
+                EnemyDirection = 0;
+                
                 enemyController.ChangeState(enemyController.enemyAttackState);
             }
         }
