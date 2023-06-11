@@ -7,6 +7,7 @@ namespace Arden.Player.State
     {
         PlayerController playerController;
         private PlayerStateManager playerStateManager;
+        private PlayerAttackManager playerAttackManager;
 
         
         
@@ -15,23 +16,23 @@ namespace Arden.Player.State
             playerStateManager = _playerStateManager;
             
             playerController = PlayerParent.PlayerController;
+            playerAttackManager = PlayerParent.PlayerAttackManager;
 
             if(playerStateManager == null) Debug.Log("Player State Manager Atanmadı");
             else Debug.Log("Player State Manager Atandı!");
-
-
-
+            
         }
         
         #region State Methods
         public override void OnStateStart()
         {
-            
+            playerController.ResetRigidbodyVelocity();
         }
         public override void OnStateUpdate()
         {
             playerController.SetGrativyScale();
             playerController.CheckCanDash();
+            playerController.CheckHoldableObject();
         }
         public override void OnStateFixedUpdate()
         {
@@ -42,6 +43,7 @@ namespace Arden.Player.State
         public override void OnStateExit()
         {
             playerController.ResetRigidbodyVelocity();
+           
         }
 
         public override void OnStateCollideEnter(Collision2D collision)
@@ -70,11 +72,13 @@ namespace Arden.Player.State
         public override void OnMove(InputAction.CallbackContext _context)
         {
             playerStateManager.horizontalInput = _context.ReadValue<float>();
-
         }
-        public override void OnLook(InputAction.CallbackContext _context)
+        public override void OnHold(InputAction.CallbackContext _context)
         {
-
+            if (_context.started && playerController.CheckHoldObjectAvaliable())
+            {
+                playerStateManager.ChangeState(playerStateManager.HoldState);
+            }
 
         }
         public override void OnJump(InputAction.CallbackContext _context)
@@ -87,6 +91,13 @@ namespace Arden.Player.State
            if(context.started) playerController.StartDash();
         }
 
+        public override void OnAttack(InputAction.CallbackContext _context)
+        {
+            if (_context.started && playerController.IsGrounded)
+            {
+                playerAttackManager.Attack();
+            }
+        }
         #endregion
 
     }

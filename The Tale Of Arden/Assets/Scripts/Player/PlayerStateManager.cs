@@ -7,6 +7,8 @@ namespace Arden.Player
     {
        private PlayerIdleState playerIdleState;
        private PlayerDashState playerDashState;
+       private PlayerAttackState playerAttackState;
+       private PlayerHoldState _holdState;
 
         PlayerState currentState;
 
@@ -14,6 +16,8 @@ namespace Arden.Player
         public PlayerState CurrentState => currentState;
         public PlayerIdleState IdleState => playerIdleState;
         public PlayerDashState DashState => playerDashState;
+        public PlayerAttackState AttackState => playerAttackState;
+        public PlayerHoldState HoldState => _holdState;
         #endregion
         
         public float horizontalInput;
@@ -24,6 +28,8 @@ namespace Arden.Player
 
             playerIdleState = new PlayerIdleState(this);
             playerDashState = new PlayerDashState(this);
+            playerAttackState = new PlayerAttackState(this);
+            _holdState = new PlayerHoldState(this);
 
             currentState = playerIdleState;
             

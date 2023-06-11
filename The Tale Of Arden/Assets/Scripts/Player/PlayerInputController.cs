@@ -18,9 +18,9 @@ namespace Arden.Player
             playerStateManager.CurrentState.OnMove(_context);
         }
 
-        public void OnLook(InputAction.CallbackContext _context)
+        public void OnHold(InputAction.CallbackContext _context)
         {
-            playerStateManager.CurrentState.OnLook(_context);
+            playerStateManager.CurrentState.OnHold(_context);
         }
 
         public void OnJump(InputAction.CallbackContext _context)
@@ -31,6 +31,11 @@ namespace Arden.Player
         public void OnDash(InputAction.CallbackContext _context)
         {
             playerStateManager.CurrentState.OnDash(_context);
+        }
+
+        public void OnAttack(InputAction.CallbackContext _context)
+        {
+            playerStateManager.CurrentState.OnAttack(_context);
         }
     }
 }
