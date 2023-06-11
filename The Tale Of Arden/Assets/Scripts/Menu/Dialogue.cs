@@ -3,50 +3,52 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 namespace Arden
 {    
     public class Dialogue : MonoBehaviour
     {
-        public TextMeshProUGUI UiObject;
-        string Textchange;
+        [SerializeField] TextMeshProUGUI UiObject;
+        [SerializeField] string Textchange;
+        [SerializeField] private float textDelay = 0.1f;
+        
+        [SerializeField] private UnityEvent callEvents;
+
+        private bool isStarted;
         void Start()
         {
-            Textchange = UiObject.text;
             UiObject.text = null;
-
         }
         void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.tag == "Player")
             {
+                if(isStarted) return;
+                
                 UiObject.gameObject.SetActive(true);
                 StartCoroutine(leveltext());
+                isStarted = true;
             }
         }
-        void Update()
-        {
         
-        }
-        private void OnTriggerExit2D(Collider2D collision)
-        {
-            if(collision.tag == "Player")
-            {
-               
-                StartCoroutine(textfinish());
-                
-            }
-        }
         IEnumerator leveltext()
         {
             for (int i = 0; i < Textchange.Length; i++)
             {
-                UiObject.text += Textchange.Substring(i, 1);
-                yield return new WaitForSeconds(0.05f);
-
-
+                string _substring = Textchange.Substring(i, 1);
+                
+                if (_substring == "$")
+                {
+                    ApplyThing();
+                    _substring = "";
+                    yield return new WaitForSeconds(textDelay);
+                }
+                
+                UiObject.text += _substring;
+                yield return new WaitForSeconds(textDelay);
             }
-            
+            StartCoroutine(textfinish());
             
         }
         IEnumerator textfinish()
@@ -55,7 +57,11 @@ namespace Arden
             UiObject.gameObject.SetActive(false);
             Destroy(gameObject);
         }
-            
+
+        void ApplyThing()
+        {
+            callEvents.Invoke();
+        }
 
 
         
