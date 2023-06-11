@@ -29,7 +29,7 @@ namespace Arden.Enemy.State
 
         public void OnEnemyStateExit()
         {
-           
+            
         }
 
         public void OnEnemyStateTriggerEnter(Collider2D col)

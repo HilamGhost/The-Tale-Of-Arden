@@ -20,8 +20,10 @@ namespace Arden.Player.State
         {
             if (collision.TryGetComponent(out EnemyController enemyController))
             {
+                Debug.Log("Dash atidli ");
                 enemyController.EnemyAttackManager.GetParried();
             }
         }
+        
     }
 }

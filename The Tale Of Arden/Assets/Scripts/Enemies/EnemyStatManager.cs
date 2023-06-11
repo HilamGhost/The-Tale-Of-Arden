@@ -8,6 +8,8 @@ namespace Arden.Enemy
     {
         private EnemyController enemyController;
         private EnemyStatProperties enemyStatProperties;
+
+        private bool isDead;
         public EnemyStatManager(EnemyController _enemy,EnemyStatProperties _stat)
         {
             enemyController = _enemy;
@@ -24,15 +26,12 @@ namespace Arden.Enemy
 
             if (enemyController.IsStateEqual(enemyController.enemyHitState))
             {
-                enemyController.StopCoroutine(WaitOnStun());
                 enemyController.StartCoroutine(WaitOnStun());
             }
             else
             {
-                enemyController.StopAllCoroutines();
-                enemyController.EnemyAnimationManager.CancelAttackAnimation();
                 enemyController.ChangeState(enemyController.enemyHitState);
-                
+                enemyController.EnemyAnimationManager.CancelAttackAnimation();
             }
             enemyStatProperties.health--;
             enemyController.StartCoroutine(ApplyHitEffect());
@@ -46,7 +45,12 @@ namespace Arden.Enemy
         }
         void Die()
         {
+            if(isDead) return;
+            isDead = true;
+            enemyController.StopAllCoroutines();
+            enemyStatProperties.health = 0;
             enemyController.enabled = false;
+            enemyController.EnemyAnimationManager.PlayDeathAnimation();
         }
 
         IEnumerator ApplyHitEffect()

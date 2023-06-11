@@ -16,12 +16,13 @@ namespace Arden.Enemy
 
 
          private Transform attackPoint;
-         private LayerMask attackLayer;
+         private LayerMask playerLayer;
          
          private ParticleSystem parryVFX;
          
          private bool isParryable;
          private bool isParried;
+         internal bool isAttacking;
          
         public EnemyAttackManager(EnemyController _enemyController,AttackProperties _attackProperties,float _attackRange)
         {
@@ -33,7 +34,7 @@ namespace Arden.Enemy
             parryEndTime = _attackProperties.attackParryEndTime;
 
             attackPoint = _attackProperties.attackPoint;
-            attackLayer = _attackProperties.playerLayer;
+            playerLayer = _attackProperties.playerLayer;
             
             recoverTime = _attackProperties.attackRecoverTime;
             parryVFX = _attackProperties.parryVFX;
@@ -42,26 +43,35 @@ namespace Arden.Enemy
 
         public IEnumerator StartAttack()
         {
+            if(isAttacking) yield break;
+            
+            isAttacking = true;
+            enemyController.EnemyAnimationManager.PlayAttackAnimation();
             enemyController.EnemyAnimationManager.StopEnemyAnimation();
             yield return new WaitForSeconds(attackWaitTime);
-            Debug.Log("Attack Starts");
-            
+
             if (!isParried)
             {
-               
+               DedectAttackablePlayer();
             }
 
             yield return new WaitForSeconds(recoverTime);
-            Debug.Log("Attack Ends");
             isParried = false;
-            
+            isAttacking = false;
             enemyController.ChangeState(enemyController.enemyIdleState);
+            
         }
 
         void DedectAttackablePlayer()
         {
+            if(!enemyController.IsStateEqual(enemyController.enemyAttackState)) return;
             
-            enemyController.EnemyDedector.PlayerTransform.GetComponent<Player.PlayerStatManager>().TakeDamage();
+            Collider2D _player = Physics2D.OverlapCircle(attackPoint.position, attackRange,playerLayer);
+            
+            if (_player != null)
+            {
+               _player.GetComponent<Player.PlayerStatManager>().TakeDamage();
+            }
         }
         public IEnumerator StartParry()
         {
