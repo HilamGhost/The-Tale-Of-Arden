@@ -53,7 +53,7 @@ namespace Arden.Player
         float jump_buffer_time_reset;
 
         [SerializeField, Range(0, 1)] float cutJumpHeight;
-        [SerializeField, Range(0, 10)] float minJumpRange;
+        [SerializeField, Range(0, 25)] float minJumpRange;
 
         [SerializeField, Range(0, 2)] private float playerSmoothTime;
 
@@ -133,7 +133,7 @@ namespace Arden.Player
         #region Jump
         void Jump()
         {
-            playerRB.velocity = new Vector2(playerRB.velocity.x, jumpSpeed);
+            playerRB.AddForce(new Vector2(playerRB.velocity.x, jumpSpeed),ForceMode2D.Impulse);
             groundedRemember = 0;
             jumpPressedRemember = 0;
             

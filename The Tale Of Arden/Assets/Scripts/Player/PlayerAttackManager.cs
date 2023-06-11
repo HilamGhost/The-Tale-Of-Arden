@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Arden.Enemy;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -103,6 +104,10 @@ namespace Arden.Player
             foreach (var _enemy in _enemyList)
             {
                 Debug.Log($"{_enemy}");
+                if(_enemy.TryGetComponent(out EnemyController enemyController))
+                {
+                    enemyController.TakeDamage();
+                }
             }
             
         }

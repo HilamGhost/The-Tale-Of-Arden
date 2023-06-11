@@ -16,11 +16,18 @@ namespace Arden.Enemy.State
 
         public void OnEnemyStateUpdate()
         {
+            
             enemyController.EnemyMover.DoPatrol();
+            
             if (enemyController.EnemyDedector.CheckPlayerIsNear())
             {
                 enemyController.ChangeState(enemyController.enemyChaseState);
+                return;
             }
+            
+            enemyController.EnemyAnimationManager.SetEnemyDirection();
+            enemyController.EnemyAnimationManager.SetEnemyMoveAnimation();
+           
         }
 
         public void OnEnemyStateFixed()

@@ -12,7 +12,7 @@ namespace Arden.Enemy.State
         }
         public void OnEnemyStateStart()
         {
-            
+            enemyController.ToggleAlert();
         }
 
         public void OnEnemyStateUpdate()
@@ -20,10 +20,14 @@ namespace Arden.Enemy.State
             if (!enemyController.EnemyDedector.CheckPlayerIsNear())
             {
                 enemyController.ChangeState(enemyController.enemyIdleState);
+                return;
             }
 
             enemyController.EnemyMover.DoChase(enemyController.EnemyDedector.PlayerTransform,
                 enemyController.attackRange);
+            
+            enemyController.EnemyAnimationManager.SetEnemyDirection();
+            enemyController.EnemyAnimationManager.SetEnemyMoveAnimation();
         }
 
         public void OnEnemyStateFixed()

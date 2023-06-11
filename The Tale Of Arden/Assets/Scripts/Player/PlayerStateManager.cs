@@ -69,7 +69,6 @@ namespace Arden.Player
         {
             if (currentState != wantedState)
             {
-                Debug.Log($"Player State changed to {wantedState} ");
                 currentState.OnStateExit();
                 currentState = wantedState;
                 currentState.OnStateStart();
