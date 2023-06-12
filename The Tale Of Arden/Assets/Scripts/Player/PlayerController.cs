@@ -98,6 +98,7 @@ namespace Arden.Player
 
             groundedRemember_reset = groundedRemember;
             jump_buffer_time_reset = jumpPressedRemember;
+            _dashCooldownReset = dashCooldown;
             jumpPressedRemember = 0;
         }
         private void Update()
@@ -290,11 +291,6 @@ namespace Arden.Player
 
         #endregion
 
-        #region State Methods
-        private void ChangeStateToIdle() => playerStateManager.ChangeState(PlayerParent.PlayerStateManager.IdleState);
-
-        #endregion
-
         #region Dash Methods
 
         public void CheckCanDash() 
@@ -389,6 +385,14 @@ namespace Arden.Player
         public void MakePlayerMatter(bool _isMatter) =>  GetComponent<Collider2D>().isTrigger = !_isMatter;
         
         public void MakePlayerDynamic(bool _isDynamic) => playerRB.isKinematic = !_isDynamic;
+
+        #region Animation/Cutscene Methods
+
+        public void ChangeStateToIdle() => playerStateManager.ChangeState(playerStateManager.IdleState);
+        public void ChangeStateToCutscene() => playerStateManager.ChangeState(playerStateManager.CutsceneState);
+        
+
+        #endregion
 
 
         private void OnDrawGizmos()
