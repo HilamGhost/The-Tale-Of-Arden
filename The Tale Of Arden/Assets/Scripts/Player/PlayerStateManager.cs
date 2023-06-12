@@ -33,7 +33,7 @@ namespace Arden.Player
             playerAttackState = new PlayerAttackState(this);
             _holdState = new PlayerHoldState(this);
             playerCutsceneState = new PlayerCutsceneState(this);
-            currentState = playerCutsceneState;
+            currentState = playerIdleState;
             
         }
 
