@@ -47,6 +47,7 @@ namespace Arden.Enemy
         {
             if(isDead) return;
             isDead = true;
+            enemyController.ChangeState(enemyController.enemyIdleState);
             enemyController.StopAllCoroutines();
             enemyStatProperties.health = 0;
             enemyController.enabled = false;

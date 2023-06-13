@@ -9,6 +9,7 @@ namespace Arden.Player
        private PlayerDashState playerDashState;
        private PlayerAttackState playerAttackState;
        private PlayerHoldState _holdState;
+       private PlayerCutsceneState playerCutsceneState;
 
         PlayerState currentState;
 
@@ -18,6 +19,7 @@ namespace Arden.Player
         public PlayerDashState DashState => playerDashState;
         public PlayerAttackState AttackState => playerAttackState;
         public PlayerHoldState HoldState => _holdState;
+        public PlayerCutsceneState CutsceneState => playerCutsceneState;
         #endregion
         
         public float horizontalInput;
@@ -30,7 +32,7 @@ namespace Arden.Player
             playerDashState = new PlayerDashState(this);
             playerAttackState = new PlayerAttackState(this);
             _holdState = new PlayerHoldState(this);
-
+            playerCutsceneState = new PlayerCutsceneState(this);
             currentState = playerIdleState;
             
         }
