@@ -20,6 +20,7 @@ namespace Arden.Enemy
         private EnemyAttackManager enemyAttackManager;
         private EnemyAnimationManager enemyAnimationManager;
         private EnemyStatManager enemyStatManager;
+        private EnemySoundManager enemySoundManager;
         
         [Header("Properties")] 
         [SerializeField] private float moveSpeed;
@@ -42,6 +43,7 @@ namespace Arden.Enemy
         public EnemyAttackManager EnemyAttackManager => enemyAttackManager;
         public EnemyAnimationManager EnemyAnimationManager => enemyAnimationManager;
         public EnemyStatManager EnemyStatManager => enemyStatManager;
+        public EnemySoundManager EnemySoundManager => enemySoundManager;
         public float VelocityDirection =>enemyMover.EnemyDirection;
         public float EnemyDirection => transform.localScale.x;
         #endregion
@@ -97,6 +99,7 @@ namespace Arden.Enemy
             enemyAttackManager = new EnemyAttackManager(this, attackProperties,attackRange);
             enemyAnimationManager = new EnemyAnimationManager(this);
             enemyStatManager = new EnemyStatManager(this, statProperties);
+            enemySoundManager = GetComponent<EnemySoundManager>();
 
         }
 
