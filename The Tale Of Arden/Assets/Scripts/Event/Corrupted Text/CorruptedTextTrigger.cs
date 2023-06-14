@@ -1,0 +1,105 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using Unity.Mathematics;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
+using Object = UnityEngine.Object;
+
+namespace Arden.Event
+{
+    public class CorruptedTextTrigger : MonoBehaviour
+    { 
+        [SerializeField] string fullSentence;
+        [SerializeField] private float textDelay = 0.1f;
+        
+        [SerializeField] string[] textOfWords;
+        [Header("Assignments")]
+        [SerializeField] private CorruptedWord[] wordPoses;
+        [SerializeField] private string corruptedWord;
+
+        [Header("Transforming Object")] 
+        [SerializeField] private GameObject firstObject;
+        [SerializeField] private GameObject transformedObject;
+        
+
+        private bool isStarted;
+        void Start()
+        {
+            
+            textOfWords = GetAllWords(fullSentence);
+            SetAllWordPoses();
+        }
+        void OnTriggerEnter2D(Collider2D collision)
+        {
+
+            if (collision.CompareTag("Player"))
+            {
+                if(isStarted) return;
+                
+                StartCoroutine(ChangeText());
+                isStarted = true;
+            }
+        }
+        
+        IEnumerator ChangeText()
+        {
+            for (int p = 0; p < wordPoses.Length; p++)
+            {
+                for (int i = 0; i < wordPoses[p].FullWord.Length; i++)
+                {
+                    string _substring = wordPoses[p].FullWord.Substring(i, 1);
+
+                    wordPoses[p].CurrentWord += _substring;
+                    yield return new WaitForSeconds(textDelay);
+                }
+                yield return new WaitForSeconds(textDelay);
+            }
+           
+            Debug.Log("Biter");
+
+        }
+        public void FinishText()
+        {
+            Destroy(gameObject);
+        }
+
+        #region Word Methods
+
+        public string[] GetAllWords(string _wantedString)
+        {
+            string[] _wordList = _wantedString.Split(new[] { " " },StringSplitOptions.None);
+            return _wordList;
+        }
+        public void SetAllWordPoses()
+        {
+            for (int i = 0; i < wordPoses.Length; i++)
+            {
+                wordPoses[i].SetWord(textOfWords[i]);
+                
+                if(textOfWords[i] == corruptedWord) wordPoses[i].SetCorrupted();
+            }
+        }
+
+
+        #endregion
+
+        #region ChangeMethods
+
+        public void TransformObject()
+        {
+            Vector2 pos = firstObject.transform.position;
+            firstObject.SetActive(false);
+
+            Instantiate(transformedObject, pos, quaternion.identity);
+
+        }
+        
+
+        #endregion
+       
+    }
+}

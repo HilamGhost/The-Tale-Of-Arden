@@ -22,17 +22,17 @@ namespace Arden
         }
         void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.tag == "Player")
+            if (collision.CompareTag("Player"))
             {
                 if(isStarted) return;
                 
                 UiObject.gameObject.SetActive(true);
-                StartCoroutine(leveltext());
+                StartCoroutine(LevelText());
                 isStarted = true;
             }
         }
         
-        IEnumerator leveltext()
+        IEnumerator LevelText()
         {
             for (int i = 0; i < Textchange.Length; i++)
             {
@@ -48,10 +48,10 @@ namespace Arden
                 UiObject.text += _substring;
                 yield return new WaitForSeconds(textDelay);
             }
-            StartCoroutine(textfinish());
+            StartCoroutine(TextFinish());
             
         }
-        IEnumerator textfinish()
+        IEnumerator TextFinish()
         {
             yield return new WaitForSeconds(1f);
             UiObject.gameObject.SetActive(false);
