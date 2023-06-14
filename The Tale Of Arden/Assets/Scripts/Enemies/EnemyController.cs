@@ -34,8 +34,6 @@ namespace Arden.Enemy
         [SerializeField] private LayerMask playerLayer;
         [SerializeField] private float playerDedectionRange;
 
-        [Header("Visual")] 
-        [SerializeField] private GameObject enemyAlert;
         
         #region Properties
         public EnemyMover EnemyMover => enemyMover;
@@ -137,18 +135,6 @@ namespace Arden.Enemy
             enemyStatManager.TakeDamage();
         }
         
-
-        #endregion
-
-        #region Visual Methods
-
-        public void ToggleAlert() => StartCoroutine(ToggleAlertVision());
-        IEnumerator ToggleAlertVision()
-        {
-            enemyAlert.SetActive(true);
-            yield return new WaitForSeconds(0.5f);
-            enemyAlert.SetActive(false);
-        }
 
         #endregion
 
