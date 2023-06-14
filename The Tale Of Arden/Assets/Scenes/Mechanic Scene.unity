@@ -409,11 +409,11 @@ PlayableDirector:
   - key: {fileID: -866283565810286385, guid: 8fbe77edcec51a040ba2a1810cfb36e9, type: 2}
     value: {fileID: 891474697}
   - key: {fileID: -150659200356190084, guid: aa1b37be2c913fb45897b9fad903c595, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 891474695}
   - key: {fileID: 6003528315091394048, guid: aa1b37be2c913fb45897b9fad903c595, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 891474695}
   - key: {fileID: -8800242242453536314, guid: aa1b37be2c913fb45897b9fad903c595, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 891474697}
   m_ExposedReferences:
     m_References:
     - 27046099237e892448685e69f41a0479: {fileID: 0}
@@ -424,13 +424,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 342580115}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5016608, y: -1.1713079, z: -0.03553191}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.501648, y: -1.1712952, z: -0.03553191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &342580118
 MonoBehaviour:
@@ -969,7 +969,7 @@ GameObject:
   - component: {fileID: 772375624}
   - component: {fileID: 772375623}
   - component: {fileID: 772375622}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cutscene Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1028,7 +1028,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &891474693
 PrefabInstance:
