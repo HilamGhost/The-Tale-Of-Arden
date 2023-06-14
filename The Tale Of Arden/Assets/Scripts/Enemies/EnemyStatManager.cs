@@ -33,6 +33,7 @@ namespace Arden.Enemy
                 enemyController.ChangeState(enemyController.enemyHitState);
                 enemyController.EnemyAnimationManager.CancelAttackAnimation();
             }
+            enemyController.EnemySoundManager.PlayHitAudioClip();
             enemyStatProperties.health--;
             enemyController.StartCoroutine(ApplyHitEffect());
             

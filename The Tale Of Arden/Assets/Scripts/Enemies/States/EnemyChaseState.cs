@@ -12,7 +12,7 @@ namespace Arden.Enemy.State
         }
         public void OnEnemyStateStart()
         {
-            enemyController.ToggleAlert();
+           
         }
 
         public void OnEnemyStateUpdate()

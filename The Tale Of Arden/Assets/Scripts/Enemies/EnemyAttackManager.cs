@@ -99,6 +99,7 @@ namespace Arden.Enemy
 
             parryVFX.transform.localScale = new Vector3(enemyController.EnemyDirection, 1, 1);
             parryVFX.Play();
+            enemyController.EnemySoundManager.PlayParrySound();
         }
     }
     [System.Serializable]

@@ -12,10 +12,13 @@ namespace Arden.Player
         [SerializeField] private int health;
         [SerializeField] private TextMeshProUGUI healthBar;
         [SerializeField] private GameObject healthDebugIndicator;
+
+        private PlayerSoundManager playerSoundManager;
         
         void Start()
         {
             healthBar.text = health.ToString();
+            playerSoundManager = GetComponent<PlayerSoundManager>();
         }
 
         public void TakeDamage()
@@ -23,6 +26,7 @@ namespace Arden.Player
             health--;
             healthBar.text = health.ToString();
             StartCoroutine(StartIndicator());
+            playerSoundManager.PlayHitSound();
         }
 
         IEnumerator StartIndicator()
