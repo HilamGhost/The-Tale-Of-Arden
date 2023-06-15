@@ -24,7 +24,7 @@ namespace Arden.Event
         void Start()
         {
             textAudioSource = GetComponent<AudioSource>();
-            UiObject = FindObjectOfType<NarrativeText>().GetComponent<TextMeshPro>();
+           if(UiObject == null) UiObject = FindObjectOfType<NarrativeText>().GetComponent<TextMeshPro>();
             UiObject.text = null;
         }
         void OnTriggerEnter2D(Collider2D collision)
