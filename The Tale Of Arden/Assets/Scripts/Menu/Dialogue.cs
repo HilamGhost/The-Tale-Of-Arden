@@ -12,7 +12,7 @@ namespace Arden
         [SerializeField] TextMeshProUGUI UiObject;
         [SerializeField] string Textchange;
         [SerializeField] private float textDelay = 0.1f;
-        
+       
         [SerializeField] private UnityEvent callEvents;
 
         private bool isStarted;
@@ -38,7 +38,7 @@ namespace Arden
             {
                 string _substring = Textchange.Substring(i, 1);
                 
-                if (_substring == "$")
+                if (_substring == "")
                 {
                     ApplyThing();
                     _substring = "";
