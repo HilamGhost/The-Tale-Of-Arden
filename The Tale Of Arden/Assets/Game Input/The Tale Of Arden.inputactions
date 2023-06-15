@@ -65,6 +65,17 @@
                 },
                 {
                     "name": "",
+                    "id": "9e57b9c3-572d-4d20-98ef-24cc99408321",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "49ee0349-3716-4547-a7eb-f51c1cd17738",
                     "path": "<Keyboard>/leftShift",
                     "interactions": "",
@@ -76,8 +87,30 @@
                 },
                 {
                     "name": "",
+                    "id": "a82f6640-97f6-4060-adce-c4c68353bbd4",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "de2bb178-c330-4f68-9e36-69fb08f444c1",
                     "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7771855d-c19d-4464-9496-ce94fcbc7224",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -119,9 +152,53 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "1D Axis Gamepad",
+                    "id": "4bfc1282-ccc7-42fa-a75b-4adfb6bc944a",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "b146aef6-66b1-45ef-9f55-9215591b78d8",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "590ea44e-e6cc-41dd-9a82-00712daa8ac5",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "a2c4f4b7-83d4-4385-8a0c-cb02225dc11d",
                     "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2abd79e1-fa9b-4292-a07d-a7b2eaebbab4",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
