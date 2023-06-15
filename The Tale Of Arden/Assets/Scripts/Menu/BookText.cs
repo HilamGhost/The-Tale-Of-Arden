@@ -19,6 +19,8 @@ namespace Arden
         [SerializeField] private AudioSource textaudiosource1;
         [SerializeField] private AudioSource textaudiosource2;
         [SerializeField] private AudioSource textaudiosource3;
+        [SerializeField] private AudioSource textaudiosource4;
+
 
 
 
@@ -79,7 +81,8 @@ namespace Arden
 
         }
         IEnumerator ahmetkaya()
-        {   
+        {
+            textaudiosource4.Play();
             for (int i = 0; i < Booklines.text.Length; i++)
             {
                 Booktitle.text += Booklines.text.Substring(i,1);
