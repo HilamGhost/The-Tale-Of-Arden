@@ -20,12 +20,14 @@ namespace Arden.Event
         [Header("Assignments")]
         [SerializeField] private CorruptedWord[] wordPoses;
         [SerializeField] private string corruptedWord;
-
+        [SerializeField] private AudioClip TextAudioClip;
+       
         [Header("Transforming Object")] 
         [SerializeField] private GameObject firstObject;
         [SerializeField] private GameObject transformedObject;
         [SerializeField] private ParticleSystem transformParticleEffect;
         
+        private AudioSource textAudioSource;
 
         private bool isStarted;
         void Start()
@@ -48,6 +50,8 @@ namespace Arden.Event
         
         IEnumerator ChangeText()
         {
+            textAudioSource.PlayOneShot(TextAudioClip);
+            
             for (int p = 0; p < wordPoses.Length; p++)
             {
                 for (int i = 0; i < wordPoses[p].FullWord.Length; i++)

@@ -13,12 +13,16 @@ namespace Arden.Event
         [SerializeField] TextMeshProUGUI UiObject;
         [SerializeField] string Textchange;
         [SerializeField] private float textDelay = 0.1f;
-       
+        [SerializeField] private AudioClip TextAudioClip;
+        
         [SerializeField] private UnityEvent callEvents;
+        private AudioSource textAudioSource;
+        
 
         private bool isStarted;
         void Start()
         {
+            textAudioSource = GetComponent<AudioSource>();
             UiObject = FindObjectOfType<NarrativeText>().GetComponent<TextMeshProUGUI>();
             UiObject.text = null;
         }
@@ -36,6 +40,8 @@ namespace Arden.Event
         
         IEnumerator LevelText()
         {
+            textAudioSource.PlayOneShot(TextAudioClip);
+            
             for (int i = 0; i < Textchange.Length; i++)
             {
                 string _substring = Textchange.Substring(i, 1);

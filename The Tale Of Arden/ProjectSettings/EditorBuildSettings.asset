@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscene.unity
     guid: 6819d853068db394da8ebb677812ac4c
   - enabled: 1
+    path: Assets/Scenes/Part_1_Level.unity
+    guid: dec6e00e4670141419093ba5cdaef57a
+  - enabled: 1
     path: Assets/Scenes/Mechanic Scene.unity
     guid: 1aaeae18f888bf541bf3810f9b2bf6c4
   m_configObjects: {}
