@@ -1480,5 +1480,9 @@ PrefabInstance:
       propertyPath: corruptedWord
       value: went
       objectReference: {fileID: 0}
+    - target: {fileID: 2391794532682466366, guid: 71b01f2d83e301f4d85710fce0eb2ab2, type: 3}
+      propertyPath: transformParticleEffect
+      value: 
+      objectReference: {fileID: 7167665226052800832, guid: 30ae587c54b352a47be1393c02a6d25b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71b01f2d83e301f4d85710fce0eb2ab2, type: 3}

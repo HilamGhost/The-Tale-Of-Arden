@@ -429,6 +429,7 @@ MonoBehaviour:
   corruptedWord: 
   firstObject: {fileID: 0}
   transformedObject: {fileID: 5577297133311707154, guid: 99a61217de0480e459c8bc03f121d5f7, type: 3}
+  transformParticleEffect: {fileID: 7167665226052800832, guid: 30ae587c54b352a47be1393c02a6d25b, type: 3}
 --- !u!1 &2391794533021743753
 GameObject:
   m_ObjectHideFlags: 0
