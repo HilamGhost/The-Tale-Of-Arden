@@ -8,6 +8,7 @@ namespace Arden
     public class InGameDialogueEventManager : ScriptableObject
     {
         private Transform callerTransform;
+        [SerializeField] private ParticleSystem transformParticleEffect;
         public void SetCallerTransform(Transform _transform) => callerTransform = _transform;
         public void ResetCallerTransform() => callerTransform = null;
         
@@ -17,6 +18,13 @@ namespace Arden
             if(!callerTransform) return;
             Vector3 createdObjectPos = callerTransform.position;
             Instantiate(_gameObject, createdObjectPos, Quaternion.identity);
+            CreateParticleEffect(callerTransform);
+        }
+
+        void CreateParticleEffect(Transform pos)
+        {
+            Vector2 _pos = pos.transform.position;
+            Instantiate(transformParticleEffect, _pos, Quaternion.identity);
         }
     }
 }

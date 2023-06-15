@@ -170,12 +170,12 @@ MonoBehaviour:
   groundState: 0
   isMoving: 0
   playerSpeed: 6
-  jumpSpeed: 15
+  jumpSpeed: 17
   isJumpCutted: 1
   canDash: 1
   dashSpeed: 20
   dashTime: 0.11
-  dashCooldown: 1
+  dashCooldown: 0.5
   holdProperties:
     holdSpeed: 1
     holdableLayer:

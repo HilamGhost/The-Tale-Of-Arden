@@ -1,23 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using Arden.Event;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
 
-namespace Arden
+namespace Arden.Event
 {    
     public class Dialogue : MonoBehaviour
     {
         [SerializeField] TextMeshProUGUI UiObject;
         [SerializeField] string Textchange;
         [SerializeField] private float textDelay = 0.1f;
-        
+       
         [SerializeField] private UnityEvent callEvents;
 
         private bool isStarted;
         void Start()
         {
+            UiObject = FindObjectOfType<NarrativeText>().GetComponent<TextMeshProUGUI>();
             UiObject.text = null;
         }
         void OnTriggerEnter2D(Collider2D collision)

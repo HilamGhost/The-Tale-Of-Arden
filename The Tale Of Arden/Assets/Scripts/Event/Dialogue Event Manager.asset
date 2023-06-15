@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2817d6dd9a682448661b142edd7258, type: 3}
   m_Name: Dialogue Event Manager
   m_EditorClassIdentifier: 
+  transformParticleEffect: {fileID: 7167665226052800832, guid: 30ae587c54b352a47be1393c02a6d25b, type: 3}
