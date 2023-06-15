@@ -64,13 +64,10 @@ namespace Arden.Event
         {
             if(corruptApplied) return;
             corruptApplied = true;
-            wordRB.bodyType = RigidbodyType2D.Dynamic;
-            
-            wordRB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-            
+
+            wordCollider.isTrigger = true;
             _corruptedTextTrigger.TransformObject();
-           
-            
+
             Debug.Log("Corrupt Applied");
         }
 

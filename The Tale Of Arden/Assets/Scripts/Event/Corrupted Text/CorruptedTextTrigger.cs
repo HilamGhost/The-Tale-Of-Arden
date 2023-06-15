@@ -24,6 +24,7 @@ namespace Arden.Event
         [Header("Transforming Object")] 
         [SerializeField] private GameObject firstObject;
         [SerializeField] private GameObject transformedObject;
+        [SerializeField] private ParticleSystem transformParticleEffect;
         
 
         private bool isStarted;
@@ -95,7 +96,7 @@ namespace Arden.Event
             firstObject.SetActive(false);
 
             Instantiate(transformedObject, pos, quaternion.identity);
-
+            Instantiate(transformParticleEffect, pos, quaternion.identity);
         }
         
 
