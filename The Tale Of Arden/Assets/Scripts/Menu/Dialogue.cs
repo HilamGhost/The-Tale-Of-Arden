@@ -40,7 +40,7 @@ namespace Arden.Event
             {
                 string _substring = Textchange.Substring(i, 1);
                 
-                if (_substring == "")
+                if (_substring == "$")
                 {
                     ApplyThing();
                     _substring = "";
