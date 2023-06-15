@@ -10,10 +10,11 @@ namespace Arden.Event
 {    
     public class Dialogue : MonoBehaviour
     {
-        [SerializeField] TextMeshProUGUI UiObject;
+        [SerializeField] TextMeshPro UiObject;
         [SerializeField] string Textchange;
         [SerializeField] private float textDelay = 0.1f;
         [SerializeField] private AudioClip TextAudioClip;
+        [SerializeField] private Transform textPos;
         
         [SerializeField] private UnityEvent callEvents;
         private AudioSource textAudioSource;
@@ -23,7 +24,7 @@ namespace Arden.Event
         void Start()
         {
             textAudioSource = GetComponent<AudioSource>();
-            UiObject = FindObjectOfType<NarrativeText>().GetComponent<TextMeshProUGUI>();
+            UiObject = FindObjectOfType<NarrativeText>().GetComponent<TextMeshPro>();
             UiObject.text = null;
         }
         void OnTriggerEnter2D(Collider2D collision)
@@ -31,8 +32,11 @@ namespace Arden.Event
             if (collision.CompareTag("Player"))
             {
                 if(isStarted) return;
+                UiObject.text = "";
                 
                 UiObject.gameObject.SetActive(true);
+                UiObject.transform.position = textPos.position;
+                
                 StartCoroutine(LevelText());
                 isStarted = true;
             }
@@ -62,7 +66,7 @@ namespace Arden.Event
         }
         IEnumerator TextFinish()
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(5f);
             UiObject.gameObject.SetActive(false);
             UiObject.text = "";
             Destroy(gameObject);

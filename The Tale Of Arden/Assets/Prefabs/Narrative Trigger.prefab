@@ -31,6 +31,37 @@ Transform:
   m_Father: {fileID: 5246971650580630595}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1611821277206457298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 955831565168469676}
+  m_Layer: 6
+  m_Name: Text Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &955831565168469676
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611821277206457298}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5246971650580630595}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5246971650580630598
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,6 +95,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1251620810}
+  - {fileID: 955831565168469676}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -132,9 +164,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UiObject: {fileID: 0}
-  Textchange: '"Annemi$ yedim."'
-  textDelay: 0.1
+  Textchange: '"And suddenly, a relentless enemy$ showed up."'
+  textDelay: 0.05
   TextAudioClip: {fileID: 0}
+  textPos: {fileID: 955831565168469676}
   callEvents:
     m_PersistentCalls:
       m_Calls:
@@ -155,7 +188,7 @@ MonoBehaviour:
         m_MethodName: CreateObject
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 5577297133311707154, guid: 99a61217de0480e459c8bc03f121d5f7, type: 3}
+          m_ObjectArgument: {fileID: 3866148183515150649, guid: 39484fd0c934da6419f5d7bb1d754414, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0

@@ -35,6 +35,9 @@ namespace Arden.Event
             
             textOfWords = GetAllWords(fullSentence);
             SetAllWordPoses();
+            
+            textAudioSource = GetComponent<AudioSource>();
+            
         }
         void OnTriggerEnter2D(Collider2D collision)
         {
@@ -83,6 +86,7 @@ namespace Arden.Event
         {
             for (int i = 0; i < wordPoses.Length; i++)
             {
+                Debug.Log(i);
                 wordPoses[i].SetWord(textOfWords[i]);
                 
                 if(textOfWords[i] == corruptedWord) wordPoses[i].SetCorrupted();
