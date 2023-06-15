@@ -40,9 +40,10 @@ namespace Arden.Event
             {
                 string _substring = Textchange.Substring(i, 1);
                 
+                // Stringte $ işareti çıktığı zaman belirlenen eventleri(Kutu çıkması gibi) oynatır, $ işaretini siler.
                 if (_substring == "$")
                 {
-                    ApplyThing();
+                    ApplyThing(); //Eventleri Çağırır.
                     _substring = "";
                     yield return new WaitForSeconds(textDelay);
                 }
@@ -57,6 +58,7 @@ namespace Arden.Event
         {
             yield return new WaitForSeconds(1f);
             UiObject.gameObject.SetActive(false);
+            UiObject.text = "";
             Destroy(gameObject);
         }
 
