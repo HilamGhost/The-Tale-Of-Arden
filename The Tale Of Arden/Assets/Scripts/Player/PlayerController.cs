@@ -389,7 +389,12 @@ namespace Arden.Player
         #region Animation/Cutscene Methods
 
         public void ChangeStateToIdle() => playerStateManager.ChangeState(playerStateManager.IdleState);
-        public void ChangeStateToCutscene() => playerStateManager.ChangeState(playerStateManager.CutsceneState);
+
+        public void ChangeStateToCutscene()
+        {
+            playerStateManager.ChangeState(playerStateManager.CutsceneState);
+            Debug.Log("A");
+        } 
         
 
         #endregion
