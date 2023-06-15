@@ -11,13 +11,17 @@ namespace Arden
     {
         [SerializeField] private string SubtitleText1, SubtitleText2, SubtitleText3;
         [SerializeField] private TextMeshPro SubtitleText;
-        public GameObject TitleParent;
         public TextMeshPro TitleText;
         [SerializeField] private TextMeshPro Booklines;
         [SerializeField] private TextMeshPro Booktitle;
         float alpha;
         [SerializeField] private Animator Animator;
-        
+        [SerializeField] private AudioSource textaudiosource1;
+        [SerializeField] private AudioSource textaudiosource2;
+        [SerializeField] private AudioSource textaudiosource3;
+        [SerializeField] private AudioSource textaudiosource4;
+
+
 
 
         void Start()
@@ -48,21 +52,25 @@ namespace Arden
                 subalpha += 0.01f;
                 SubtitleText.color = new Color(1, 1, 1, subalpha);
             }
-            yield return new WaitForSeconds(3f);
+            textaudiosource1.Play();
+            yield return new WaitForSeconds(7.5f);
             SubtitleText.text = SubtitleText2;
-            yield return new WaitForSeconds(3f);
+            textaudiosource2.Play();
+            yield return new WaitForSeconds(6.5f);
             SubtitleText.text = SubtitleText3;
-            yield return new WaitForSeconds(3f);
+            textaudiosource3.Play();
+            yield return new WaitForSeconds(3.5f);
+            subalpha = 1f;
             for (int i = 0; i < 100; i++)
             {
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(0.055f);
                 subalpha -= 0.01f;
                 SubtitleText.color = new Color(1, 1, 1, subalpha);
             }
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
             for (int i = 0; i < 100; i++)
             {
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(0.02f);
                 alpha -= 0.01f;
                 TitleText.color = new Color(1, 1, 1, alpha);
             }
@@ -73,7 +81,8 @@ namespace Arden
 
         }
         IEnumerator ahmetkaya()
-        {   
+        {
+            textaudiosource4.Play();
             for (int i = 0; i < Booklines.text.Length; i++)
             {
                 Booktitle.text += Booklines.text.Substring(i,1);
