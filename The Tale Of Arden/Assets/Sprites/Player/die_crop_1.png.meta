@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 215
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,10 +67,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,7 +115,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: die_crop_1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 900
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5225291a6146d724280454dbeb212a1e
+      internalID: 1881888331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_crop_1_1
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 900
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8304b26ab297b4d85a853f47cfa77c
+      internalID: 1128283324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_crop_1_2
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 900
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964d95afb4ecafc4d8d5fe41eca2a57b
+      internalID: -1223008959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_crop_1_3
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 0
+        width: 900
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f06fee55598ff1c478bd19e51d6428a5
+      internalID: -1152709676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_crop_1_4
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 900
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 623f726a5f29d8348a0d4c9def4ac8b1
+      internalID: 1265081461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_crop_1_5
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 0
+        width: 900
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3ee7cf65ac40874c88609bbf44d57fb
+      internalID: 1273113551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_crop_1_6
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 0
+        width: 900
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa03f7b1a17eab41af2f8b67faddac1
+      internalID: -1374382643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_crop_1_7
+      rect:
+        serializedVersion: 2
+        x: 6300
+        y: 0
+        width: 900
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3850f9dda7777574c85cfe0801f0ef20
+      internalID: 1412994465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_crop_1_8
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 0
+        width: 900
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb59ec1c7d69b647aa1313abd067214
+      internalID: -355854206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_crop_1_9
+      rect:
+        serializedVersion: 2
+        x: 8100
+        y: 0
+        width: 900
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058bfadda143a6240a7066555b3dbc19
+      internalID: -234115313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_crop_1_10
+      rect:
+        serializedVersion: 2
+        x: 9000
+        y: 0
+        width: 900
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fac67a2cda70a847990026fe0d61df4
+      internalID: 322999821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_crop_1_11
+      rect:
+        serializedVersion: 2
+        x: 9900
+        y: 0
+        width: 900
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e127e110ac0ecde48a7bf3738283dbc8
+      internalID: 2109488588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_crop_1_12
+      rect:
+        serializedVersion: 2
+        x: 10800
+        y: 0
+        width: 900
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa38ecfab9109349b2ed341441cb3fe
+      internalID: -1311769801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_crop_1_13
+      rect:
+        serializedVersion: 2
+        x: 11700
+        y: 0
+        width: 900
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c7b80f2daf1214e9f977a176455a6c
+      internalID: 747874569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_crop_1_14
+      rect:
+        serializedVersion: 2
+        x: 12600
+        y: 0
+        width: 900
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4324cf7a756c5469174beba84e63e4
+      internalID: 245574805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_crop_1_15
+      rect:
+        serializedVersion: 2
+        x: 13500
+        y: 0
+        width: 900
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f075c572dfc0380498842882506e7026
+      internalID: 1855859430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +462,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      die_crop_1_8: -355854206
+      die_crop_1_3: -1152709676
+      die_crop_1_7: 1412994465
+      die_crop_1_0: 1881888331
+      die_crop_1_1: 1128283324
+      die_crop_1_12: -1311769801
+      die_crop_1_11: 2109488588
+      die_crop_1_14: 245574805
+      die_crop_1_6: -1374382643
+      die_crop_1_4: 1265081461
+      die_crop_1_10: 322999821
+      die_crop_1_15: 1855859430
+      die_crop_1_9: -234115313
+      die_crop_1_2: -1223008959
+      die_crop_1_13: 747874569
+      die_crop_1_5: 1273113551
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

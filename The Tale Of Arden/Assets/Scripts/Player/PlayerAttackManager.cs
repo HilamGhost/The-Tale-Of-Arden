@@ -40,7 +40,7 @@ namespace Arden.Player
         
         void Start()
         {
-            _playerAnimationManager = PlayerParent.PlayerAnimationManagerManager;
+            _playerAnimationManager = PlayerParent.PlayerAnimationManager;
             
             playerSoundManager = PlayerParent.PlayerSoundManager;
             playerStateManager = PlayerParent.PlayerStateManager;

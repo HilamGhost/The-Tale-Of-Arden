@@ -54,16 +54,13 @@ namespace Arden.Player
 
         [SerializeField, Range(0, 1)] float cutJumpHeight;
         [SerializeField, Range(0, 25)] float minJumpRange;
-
-        [SerializeField, Range(0, 2)] private float playerSmoothTime;
+        
 
         [Header("Gravity Values")]
         [SerializeField, Range(0, 10)] private float gravityScale;
         [SerializeField, Range(0, 20)] private float gravityFallScale;
         [SerializeField, Range(0, 30)] private float maxFallSpeed;
         
-        [Header("Camera")]
-        [SerializeField] CinemachineVirtualCamera virtualCamera;
         
 
 
@@ -89,7 +86,7 @@ namespace Arden.Player
             playerRB = GetComponent<Rigidbody2D>();
             groundChecker = GetComponentInChildren<GroundChecker>();
 
-            _playerAnimationManager = PlayerParent.PlayerAnimationManagerManager;
+            _playerAnimationManager = PlayerParent.PlayerAnimationManager;
             
             playerSoundManager = PlayerParent.PlayerSoundManager;
             playerStateManager = PlayerParent.PlayerStateManager;

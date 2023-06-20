@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 5246971650580630597}
   - component: {fileID: 5246971650580630594}
   - component: {fileID: 3147339321050770508}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Narrative Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

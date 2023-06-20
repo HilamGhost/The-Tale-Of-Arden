@@ -10,8 +10,9 @@ namespace Arden.Player
         static PlayerInputController playerInput;
         static PlayerStateManager playerStateManager;
         private static PlayerSoundManager playerSoundManager;
-        private static PlayerAnimationManager _playerAnimationManagerManager;
+        private static PlayerAnimationManager _playerAnimationManager;
         private static PlayerAttackManager playerAttackManager;
+        private static PlayerStatManager playerStatManager;
         
         private Animator playerAnimator;
         
@@ -19,10 +20,10 @@ namespace Arden.Player
         public static PlayerInputController PlayerInput => playerInput;
         public static PlayerStateManager PlayerStateManager => playerStateManager;
         public static PlayerSoundManager PlayerSoundManager => playerSoundManager;
-        public static PlayerAnimationManager PlayerAnimationManagerManager => _playerAnimationManagerManager;
+        public static PlayerAnimationManager PlayerAnimationManager => _playerAnimationManager;
         public static PlayerAttackManager PlayerAttackManager => playerAttackManager;
 
-    
+        public static PlayerStatManager PlayerStatManager => playerStatManager;
 
         protected override void Awake()
         {
@@ -66,7 +67,8 @@ namespace Arden.Player
             playerInput = PlayerInputController.Instance;
             playerSoundManager = GetComponent<PlayerSoundManager>();
             playerAttackManager = GetComponent<PlayerAttackManager>();
-            _playerAnimationManagerManager = new PlayerAnimationManager(playerAnimator);
+            _playerAnimationManager = new PlayerAnimationManager(playerAnimator);
+            playerStatManager = GetComponent<PlayerStatManager>();
             
             playerStateManager = new PlayerStateManager();
 

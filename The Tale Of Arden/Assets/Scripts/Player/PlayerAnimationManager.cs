@@ -34,6 +34,10 @@ namespace Arden.Player
             playerAnimatior.SetTrigger("Attack Second");
         }
 
+        public void PlayDeathAnimation()
+        {
+            playerAnimatior.SetTrigger("Die");
+        }
         public void PlayTrigger(string _trigger)
         {
             playerAnimatior.SetTrigger(_trigger);
