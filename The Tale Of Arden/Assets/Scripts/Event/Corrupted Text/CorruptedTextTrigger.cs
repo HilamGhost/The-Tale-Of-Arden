@@ -2,12 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using Unity.Mathematics;
-using UnityEngine.Events;
-using UnityEngine.Serialization;
-using Object = UnityEngine.Object;
+using Unity.VisualScripting;
+
 
 namespace Arden.Event
 {
@@ -19,14 +16,15 @@ namespace Arden.Event
         [SerializeField] string[] textOfWords;
         [Header("Assignments")]
         [SerializeField] private CorruptedWord[] wordPoses;
-        [SerializeField] private string corruptedWord;
+        [SerializeField] private string[] corruptedWords;
         [SerializeField] private AudioClip TextAudioClip;
        
         [Header("Transforming Object")] 
-        [SerializeField] private GameObject firstObject;
-        [SerializeField] private GameObject transformedObject;
+        [SerializeField] private GameObject[] corruptedObjects;
         [SerializeField] private ParticleSystem transformParticleEffect;
-
+        private int currentObject;
+        private CorruptedWord reallyCorruptedWord;
+        
         [Header("Platforms")] 
         [SerializeField] private GameObject wordPlatform;
         [SerializeField] private GameObject platformParent;
@@ -39,7 +37,7 @@ namespace Arden.Event
             
             textOfWords = GetAllWords(fullSentence);
             SetAllWordPoses();
-            
+
             textAudioSource = GetComponent<AudioSource>();
             
         }
@@ -57,7 +55,7 @@ namespace Arden.Event
         
         IEnumerator ChangeText()
         {
-            textAudioSource.PlayOneShot(TextAudioClip);
+            if(TextAudioClip != null )textAudioSource.PlayOneShot(TextAudioClip);
             
             for (int p = 0; p < wordPoses.Length; p++)
             {
@@ -91,8 +89,12 @@ namespace Arden.Event
             for (int i = 0; i < wordPoses.Length; i++)
             {
                 wordPoses[i].SetWord(textOfWords[i]);
-                
-                if(textOfWords[i] == corruptedWord) wordPoses[i].SetCorrupted();
+
+                if (textOfWords[i] == corruptedWords[0])
+                {
+                    wordPoses[i].SetCorrupted();
+                    reallyCorruptedWord = wordPoses[i];
+                }
             }
         }
 
@@ -103,14 +105,23 @@ namespace Arden.Event
 
         public void TransformObject()
         {
-            Vector2 pos = firstObject.transform.position;
-            firstObject.SetActive(false);
-
-            Instantiate(transformedObject, pos, quaternion.identity);
+            Vector2 pos = corruptedObjects[currentObject].transform.position;
+            corruptedObjects[currentObject].SetActive(false);
             Instantiate(transformParticleEffect, pos, quaternion.identity);
+            
+            currentObject++;
+            if (currentObject >= corruptedWords.Length)
+            {
+                currentObject = 0;
+            }
+
+            Vector2 newPos = corruptedObjects[currentObject].transform.position;
+            corruptedObjects[currentObject].SetActive(true);
+            reallyCorruptedWord.ChangeText(corruptedWords[currentObject]);
+            
+            Instantiate(transformParticleEffect, newPos, quaternion.identity);
         }
         
-
         #endregion
         #region SetThePlatforms
         public void SetPlatforms()

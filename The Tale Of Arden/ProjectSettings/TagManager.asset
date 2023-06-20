@@ -6,6 +6,7 @@ TagManager:
   tags:
   - 313131
   - FxTemporaire
+  - Prefab
   layers:
   - Default
   - TransparentFX

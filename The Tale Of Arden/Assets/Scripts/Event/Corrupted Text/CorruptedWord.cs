@@ -15,8 +15,6 @@ namespace Arden.Event
         private Rigidbody2D wordRB;
         private string currentWord;
 
-        private bool corruptApplied;
-
         private CorruptedTextTrigger _corruptedTextTrigger;
         
 
@@ -53,6 +51,7 @@ namespace Arden.Event
             wordText.rectTransform.sizeDelta = TextLenghtData.WantedWord(_word.Length);
         }
 
+        public void ChangeText(string _text) => wordText.text = _text;
         public void SetCorrupted()
         {
             wordText.faceColor = Color.red;
@@ -62,8 +61,6 @@ namespace Arden.Event
 
         void ApplyCorrupt()
         {
-            if(corruptApplied) return;
-            corruptApplied = true;
 
             wordCollider.isTrigger = true;
             _corruptedTextTrigger.TransformObject();
@@ -75,8 +72,15 @@ namespace Arden.Event
         {
             if (col.transform.CompareTag("Player"))
             {
-                if(!IsCorrupted) return;
-                ApplyCorrupt();
+                if(IsCorrupted) ApplyCorrupt();
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.transform.CompareTag("Player"))
+            {
+                if(IsCorrupted) ApplyCorrupt();
             }
         }
     }
