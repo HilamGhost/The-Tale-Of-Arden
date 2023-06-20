@@ -26,6 +26,10 @@ namespace Arden.Event
         [SerializeField] private GameObject firstObject;
         [SerializeField] private GameObject transformedObject;
         [SerializeField] private ParticleSystem transformParticleEffect;
+
+        [Header("Platforms")] 
+        [SerializeField] private GameObject wordPlatform;
+        [SerializeField] private GameObject platformParent;
         
         private AudioSource textAudioSource;
 
@@ -86,7 +90,6 @@ namespace Arden.Event
         {
             for (int i = 0; i < wordPoses.Length; i++)
             {
-                Debug.Log(i);
                 wordPoses[i].SetWord(textOfWords[i]);
                 
                 if(textOfWords[i] == corruptedWord) wordPoses[i].SetCorrupted();
@@ -108,6 +111,26 @@ namespace Arden.Event
         }
         
 
+        #endregion
+        #region SetThePlatforms
+        public void SetPlatforms()
+        {
+            
+            while(platformParent.transform.childCount>0)
+            {
+                DestroyImmediate(platformParent.transform.GetChild(0).gameObject);
+            }
+            
+            textOfWords = GetAllWords(fullSentence);
+            wordPoses = new CorruptedWord[textOfWords.Length];
+            
+            int _lenghtOfWord = wordPoses.Length;
+            for (int i = 0; i < _lenghtOfWord; i++)
+            {
+                GameObject _platform = Instantiate(wordPlatform, transform.position, quaternion.identity,platformParent.transform);
+                wordPoses[i] = _platform.GetComponent<CorruptedWord>();
+            }
+        }
         #endregion
        
     }
