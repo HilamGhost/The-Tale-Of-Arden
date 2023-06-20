@@ -44,7 +44,7 @@ namespace Arden
         IEnumerator subtitle()
         {
             yield return new WaitForSeconds(5f);
-            float subalpha = 0f;
+            float subalpha = 1f;
             SubtitleText.text = SubtitleText1;
             for (int i = 0; i < 100; i++)
             {
@@ -70,15 +70,15 @@ namespace Arden
             
             textaudiosource3.Play();
             
-            yield return new WaitForSeconds(3.5f);
+            yield return new WaitForSeconds(7.5f);
             subalpha = 1f;
             for (int i = 0; i < 100; i++)
             {
-                yield return new WaitForSeconds(0.055f);
-                subalpha -= 0.01f;
+                yield return new WaitForSeconds(0.01f);
+                subalpha -= 1f;
                 SubtitleText.color = new Color(1, 1, 1, subalpha);
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(0.2f);
             for (int i = 0; i < 100; i++)
             {
                 yield return new WaitForSeconds(0.02f);
