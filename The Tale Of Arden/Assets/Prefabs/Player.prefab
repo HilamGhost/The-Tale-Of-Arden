@@ -187,11 +187,9 @@ MonoBehaviour:
   jumpPressedRemember: 0.1
   cutJumpHeight: 0.8
   minJumpRange: 0
-  playerSmoothTime: 0
   gravityScale: 4
   gravityFallScale: 10
   maxFallSpeed: 20
-  virtualCamera: {fileID: 0}
 --- !u!114 &6108689291671169475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,11 +242,11 @@ MonoBehaviour:
   range: 1
   swingKnockout: {x: 3, y: 0.15}
   hitKnockout: {x: 0, y: 0}
-  hitTime: 0.45
+  hitTime: 0.1
   knockoutTime: 0.25
   recoverTime: 0.3
-  secondCanHitTime: 0.3
-  secondAttackHitTime: 0.2
+  secondCanHitTime: 0.2
+  secondAttackHitTime: 0.05
   secondAttackKnockoutTime: 0.1
   secondAttackRecoverTime: 0.3
   enemyLayer:
