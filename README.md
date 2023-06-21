@@ -1,5 +1,8 @@
 # The-Tale-Of-Arden
 BUG Final Project
+
+[You can find the itch.io link here](https://valiantry.itch.io/the-tale-of-arden)
+
 Greetings!
 
 The Tale of Arden is a narrative-based 2D puzzle adventure game.
