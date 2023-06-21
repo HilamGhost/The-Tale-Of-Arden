@@ -610,13 +610,17 @@ PrefabInstance:
       objectReference: {fileID: 1546378980}
     - target: {fileID: 5246971650580630597, guid: 394897dfabd690c4995d13f4b8359039, type: 3}
       propertyPath: textDelay
-      value: 0.025
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5246971650580630597, guid: 394897dfabd690c4995d13f4b8359039, type: 3}
       propertyPath: Textchange
       value: "No hero left to save Valoria.  You must go to the Grand Castle!  You
         must save the Queen!  And defeat\u2026 Vardoth, the Rutheless King."
       objectReference: {fileID: 0}
+    - target: {fileID: 5246971650580630597, guid: 394897dfabd690c4995d13f4b8359039, type: 3}
+      propertyPath: TextAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f6c38c4ff9fe3147b22aa02d5b4d09f, type: 3}
     - target: {fileID: 5246971650580630597, guid: 394897dfabd690c4995d13f4b8359039, type: 3}
       propertyPath: callEvents.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -5235,6 +5239,10 @@ PrefabInstance:
       value: There is a note attached to the rock!
       objectReference: {fileID: 0}
     - target: {fileID: 5246971650580630597, guid: 394897dfabd690c4995d13f4b8359039, type: 3}
+      propertyPath: TextAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ee3a30f3870045a4db48bda263a4ebf3, type: 3}
+    - target: {fileID: 5246971650580630597, guid: 394897dfabd690c4995d13f4b8359039, type: 3}
       propertyPath: callEvents.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -5558,12 +5566,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5246971650580630597, guid: 394897dfabd690c4995d13f4b8359039, type: 3}
       propertyPath: Textchange
-      value: Eldertree never had soldiers before
+      value: Eldertree never had soldier before
       objectReference: {fileID: 0}
     - target: {fileID: 5246971650580630597, guid: 394897dfabd690c4995d13f4b8359039, type: 3}
       propertyPath: TextAudioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 2fcd88263a56d6e44afc40e5da71bb78, type: 3}
+      objectReference: {fileID: 8300000, guid: ea31bbdbd3a09b14fb535eedec117d36, type: 3}
     - target: {fileID: 5246971650580630597, guid: 394897dfabd690c4995d13f4b8359039, type: 3}
       propertyPath: callEvents.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -5635,6 +5643,10 @@ PrefabInstance:
     - target: {fileID: 5246971650580630598, guid: 394897dfabd690c4995d13f4b8359039, type: 3}
       propertyPath: m_Name
       value: ElderTreeSoldierText
+      objectReference: {fileID: 0}
+    - target: {fileID: 5246971650580630598, guid: 394897dfabd690c4995d13f4b8359039, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 394897dfabd690c4995d13f4b8359039, type: 3}
@@ -6782,6 +6794,10 @@ PrefabInstance:
       propertyPath: Textchange
       value: And never felt so dark, there is something wrong
       objectReference: {fileID: 0}
+    - target: {fileID: 5246971650580630597, guid: 394897dfabd690c4995d13f4b8359039, type: 3}
+      propertyPath: TextAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3173a62c9010c704e8540f9b732f9b33, type: 3}
     - target: {fileID: 5246971650580630597, guid: 394897dfabd690c4995d13f4b8359039, type: 3}
       propertyPath: callEvents.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -11053,7 +11069,7 @@ MonoBehaviour:
   - Flower
   - Box
   - Sign
-  TextAudioClip: {fileID: 8300000, guid: eb9879a9f8f997f46ba1411e23cc5350, type: 3}
+  TextAudioClip: {fileID: 8300000, guid: 2c992ad008138604987e6c6ab2b60572, type: 3}
   corruptedObjects:
   - {fileID: 589302783}
   - {fileID: 1818120781}
