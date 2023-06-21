@@ -1673,7 +1673,7 @@ MonoBehaviour:
   Booklines: {fileID: 206615796}
   Booktitle: {fileID: 27961797}
   Animator: {fileID: 521159996}
-  textaudiosource1: {fileID: 0}
-  textaudiosource2: {fileID: 0}
-  textaudiosource3: {fileID: 0}
-  textaudiosource4: {fileID: 0}
+  textaudiosource1: {fileID: 1857235597}
+  textaudiosource2: {fileID: 389196403}
+  textaudiosource3: {fileID: 603997911}
+  textaudiosource4: {fileID: 1902892421}

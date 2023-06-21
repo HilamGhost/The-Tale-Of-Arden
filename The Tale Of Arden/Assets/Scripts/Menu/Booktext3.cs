@@ -54,14 +54,14 @@ namespace Arden
                 SubtitleText.color = new Color(0, 0, 0, subalpha);
             }
 
-            yield return new WaitForSeconds(6.5f);
+            yield return new WaitForSeconds(2.7f);
             SubtitleText.color = new Color(0, 0, 0, 0);
             yield return new WaitForSeconds(1.5f);
             SubtitleText.color = new Color(0, 0, 0, 1);
             SubtitleText.text = SubtitleText2;
             textaudiosource2.Play();
 
-            yield return new WaitForSeconds(5.7f);
+            yield return new WaitForSeconds(3.5f);
             SubtitleText.color = new Color(0, 0, 0, 0);
             yield return new WaitForSeconds(1.5f);
             SubtitleText.color = new Color(0, 0, 0, 1);
@@ -71,7 +71,7 @@ namespace Arden
 
             textaudiosource3.Play();
 
-            yield return new WaitForSeconds(7.5f);
+            yield return new WaitForSeconds(4.5f);
             subalpha = 1f;
             for (int i = 0; i < 100; i++)
             {

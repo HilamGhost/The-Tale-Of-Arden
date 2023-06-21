@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Start Menu 1.unity
+    guid: e19b6350c24c825419ef08f9bf38efe3
+  - enabled: 1
     path: Assets/Scenes/Cutscene.unity
     guid: 6819d853068db394da8ebb677812ac4c
   - enabled: 1
@@ -15,21 +18,27 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscene2.unity
     guid: df9bec09dcc6f1644a3813dd69ea6011
   - enabled: 1
+    path: Assets/Scenes/Part_2_Level.unity
+    guid: 1910a5dee1a079c4b91ef3d19ad6fb07
+  - enabled: 1
     path: Assets/Scenes/Cutscene3.unity
     guid: 473f825dec660444d98076bdeb827e98
   - enabled: 1
     path: Assets/Scenes/Cutscene4.unity
     guid: d90c0f8b6c51c1945a34baf820790ad7
   - enabled: 1
+    path: Assets/Scenes/Part_3_Level.unity
+    guid: 0543877e10ce7734e98bed9987244890
+  - enabled: 1
     path: Assets/Scenes/Cutscene5.unity
     guid: 1ca5cbaf8321b624094e46348b1a5942
+  - enabled: 1
+    path: Assets/Scenes/Part_4_Level.unity
+    guid: b5b2bb9771d021d459c36a9246e944db
   - enabled: 1
     path: Assets/Scenes/Cutscene6.unity
     guid: cc0e7e1c62b294e42ad0605f300f2570
   - enabled: 1
     path: Assets/Scenes/Start Menu2.unity
     guid: 38a2794cc24395b4887156bda7da84e4
-  - enabled: 0
-    path: Assets/Scenes/Mechanic Scene.unity
-    guid: 1aaeae18f888bf541bf3810f9b2bf6c4
   m_configObjects: {}
