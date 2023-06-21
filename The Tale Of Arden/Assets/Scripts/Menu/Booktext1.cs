@@ -75,12 +75,12 @@ namespace Arden
 
         IEnumerator ahmetkaya()
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.14f);
             alpha = 0f;
             for (int i = 0; i < 100; i++)
 
             {
-                yield return new WaitForSeconds(0.02f);
+                yield return new WaitForSeconds(0.065f);
                 alpha += 0.01f;
                tree.color = new Color(1, 1, 1, alpha);
             }
@@ -88,7 +88,7 @@ namespace Arden
             for (int i = 0; i < Booklines.text.Length; i++)
             {
                 Booktitle.text += Booklines.text.Substring(i, 1);
-                yield return new WaitForSeconds(0.08f);
+                yield return new WaitForSeconds(0.09f);
 
 
             }

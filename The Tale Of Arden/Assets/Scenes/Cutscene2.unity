@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "However, the forest seems dull and roads seem different than\_before\_."
+  m_text: "However, the forest seems dull and roads seem different than\_before\_..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 422f5840b4fb0ed43b4b8391cc2c2e3a, type: 2}
   m_sharedMaterial: {fileID: 7965182646068945439, guid: 422f5840b4fb0ed43b4b8391cc2c2e3a, type: 2}

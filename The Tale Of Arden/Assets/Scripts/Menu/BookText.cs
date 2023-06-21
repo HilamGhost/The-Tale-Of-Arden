@@ -105,7 +105,7 @@ namespace Arden
 
             }
             yield return new WaitForSeconds(1f);
-            Animator.SetTrigger("CamMove");
+            Animator.SetTrigger("Left");
             yield return new WaitForSeconds(3f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
